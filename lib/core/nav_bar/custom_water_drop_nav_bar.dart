@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:med_card/core/colors/app_colors.dart';
 
 typedef OnButtonPressCallback = void Function(int index);
 
@@ -95,8 +96,9 @@ class _CustomWaterDropNavBarState extends State<CustomWaterDropNavBar>
       child: Container(
         height: barHeight,
         decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: BorderRadius.circular(28),
+          color: AppColors.float,
+          // borderRadius: BorderRadius.circular(28),
+          // border: Border.all(color: AppColors.iconSecondary),
         ),
         child: Stack(
           children: <Widget>[

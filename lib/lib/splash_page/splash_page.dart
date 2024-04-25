@@ -20,7 +20,13 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
 
-    context.read<SplashBloc>().getMinimumAppVersion();
+    Future.delayed(const Duration(seconds: 3)).then((value) {
+      Navigator.pushNamedAndRemoveUntil(
+        context,
+        AppRoutes.rootPage,
+        (route) => false,
+      );
+    });
   }
 
   @override
@@ -33,7 +39,7 @@ class _SplashPageState extends State<SplashPage> {
       },
       builder: (context, state) {
         return Scaffold(
-          backgroundColor: AppColors.float,
+          backgroundColor: AppColors.primary,
           body: state.showAppUpdatesPage ? const AppUpdatesView() : _SplashView(),
         );
       },
@@ -56,7 +62,7 @@ class _SplashView extends StatelessWidget {
         ),
         SizedBox(height: 50.h),
         const Center(
-          child: CircularProgressIndicator(color: AppColors.primary),
+          child: CircularProgressIndicator(color: AppColors.float),
         ),
         const Spacer(),
       ],

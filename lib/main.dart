@@ -1,7 +1,8 @@
+import 'package:med_card/core/router/main_route_generator.dart';
+
 import 'core/api/api_logging.dart';
 import 'core/api/api_provider.dart';
 import 'core/themes/app_themes.dart';
-import 'core/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'core/current_user/user_data.dart';
@@ -52,11 +53,11 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp.router(
+        return MaterialApp(
           theme: lightTheme(),
           themeMode: ThemeMode.system,
           debugShowCheckedModeBanner: false,
-          routerConfig: router,
+          onGenerateRoute: MainRouteGenerator().generateRoute,
         );
       },
     );

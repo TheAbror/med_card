@@ -20,12 +20,11 @@ class ActionButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        height: 48.h,
+        height: 40.h,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: isFilled ? AppColors.textMain : Colors.transparent,
+          color: isFilled ? AppColors.primary : Colors.transparent,
           borderRadius: BorderRadius.all(Radius.circular(8.r)),
-          border: Border.all(color: AppColors.primary, width: 1),
         ),
         child: Center(
           child: Text(

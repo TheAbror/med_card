@@ -30,14 +30,6 @@ class _RootPageState extends State<RootPage> {
     Container(
       alignment: Alignment.center,
       child: Icon(
-        Icons.favorite,
-        size: 56,
-        color: Colors.green[400],
-      ),
-    ),
-    Container(
-      alignment: Alignment.center,
-      child: Icon(
         Icons.email,
         size: 56,
         color: Colors.blue[400],
@@ -48,64 +40,52 @@ class _RootPageState extends State<RootPage> {
 
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle(
-        systemNavigationBarColor: navigationBarColor, //TODO
-        systemNavigationBarIconBrightness: Brightness.dark,
-      ),
-      child: BlocBuilder<RootBloc, RootState>(
-        builder: (context, state) {
-          return Scaffold(
-            body: SafeArea(
-              child: PageView(
-                physics: const NeverScrollableScrollPhysics(),
-                controller: pageController,
-                children: [pages[selectedIndex]],
+    return BlocBuilder<RootBloc, RootState>(
+      builder: (context, state) {
+        return Scaffold(
+          backgroundColor: AppColors.primary,
+          body: PageView(
+            physics: const NeverScrollableScrollPhysics(),
+            controller: pageController,
+            children: [pages[selectedIndex]],
+          ),
+          bottomNavigationBar: CustomWaterDropNavBar(
+            backgroundColor: AppColors.textMain,
+            selectedTextColor: AppColors.primary,
+            unSelectedTextColor: AppColors.primary,
+            waterDropColor: AppColors.primary,
+            inactiveIconColor: AppColors.primary,
+            selectedIndex: selectedIndex,
+            barItems: <BarItem>[
+              BarItem(
+                label: 'Главный',
+                filledIcon: Icons.home,
+                outlinedIcon: Icons.home_outlined,
               ),
-            ),
-            bottomNavigationBar: CustomWaterDropNavBar(
-              backgroundColor: AppColors.textMain,
-              selectedTextColor: Colors.white,
-              unSelectedTextColor: Colors.white,
-              waterDropColor: AppColors.primary,
-              inactiveIconColor: Colors.white,
-              selectedIndex: selectedIndex,
-              barItems: <BarItem>[
-                BarItem(
-                  label: 'Home',
-                  filledIcon: Icons.bookmark_rounded,
-                  outlinedIcon: Icons.bookmark_border_rounded,
-                ),
-                BarItem(
-                  label: 'Favorite',
-                  filledIcon: Icons.favorite_rounded,
-                  outlinedIcon: Icons.favorite_border_rounded,
-                ),
-                BarItem(
-                  label: 'Email',
-                  filledIcon: Icons.email_rounded,
-                  outlinedIcon: Icons.email_outlined,
-                ),
-                BarItem(
-                  label: 'Profile',
-                  filledIcon: Icons.folder_rounded,
-                  outlinedIcon: Icons.folder_outlined,
-                ),
-              ],
-              onItemSelected: (int index) {
-                setState(() {
-                  selectedIndex = index;
-                });
-                pageController.animateToPage(
-                  selectedIndex,
-                  duration: const Duration(milliseconds: 10),
-                  curve: Curves.easeOutCubic,
-                );
-              },
-            ),
-          );
-        },
-      ),
+              BarItem(
+                label: 'Медкарта',
+                filledIcon: Icons.email_rounded,
+                outlinedIcon: Icons.email_outlined,
+              ),
+              BarItem(
+                label: 'Еще',
+                filledIcon: Icons.folder_rounded,
+                outlinedIcon: Icons.folder_outlined,
+              ),
+            ],
+            onItemSelected: (int index) {
+              setState(() {
+                selectedIndex = index;
+              });
+              pageController.animateToPage(
+                selectedIndex,
+                duration: const Duration(milliseconds: 10),
+                curve: Curves.easeOutCubic,
+              );
+            },
+          ),
+        );
+      },
     );
   }
 }
