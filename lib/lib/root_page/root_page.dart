@@ -43,7 +43,7 @@ class _RootPageState extends State<RootPage> {
     return BlocBuilder<RootBloc, RootState>(
       builder: (context, state) {
         return Scaffold(
-          backgroundColor: AppColors.primary,
+          backgroundColor: AppColors.background,
           body: PageView(
             physics: const NeverScrollableScrollPhysics(),
             controller: pageController,
