@@ -3,7 +3,6 @@ import 'package:med_card/core/colors/app_colors.dart';
 import 'bloc/root_bloc.dart';
 import 'tabs/home_tab/home_tab.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'tabs/profile_tab/profile_tab.dart';
 import '../../core/nav_bar/custom_water_drop_nav_bar.dart';
 
