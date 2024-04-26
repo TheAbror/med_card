@@ -121,13 +121,14 @@ class HomeTab extends StatelessWidget {
                   ),
                   SizedBox(height: 16.h),
                   ActionButton(
-                      text: 'Записаться',
-                      onPressed: () {
-                        Navigator.pushNamed(
-                          context,
-                          AppRoutes.appointmentPage,
-                        );
-                      }),
+                    text: 'Записаться',
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        AppRoutes.appointmentPage,
+                      );
+                    },
+                  ),
                   SizedBox(height: 16.h),
                   Container(
                     padding: EdgeInsets.all(8.w),

@@ -48,17 +48,16 @@ class SearchInput extends StatelessWidget {
               filled: true,
               fillColor: fillColor,
               suffixIcon: suffixIcon,
+              contentPadding: EdgeInsets.only(bottom: 2),
               prefixIcon: Padding(
                 padding: EdgeInsets.only(
-                  right: 8.w,
                   // bottom: 16.h,
-                  // top: 16.h,
-                  // left: 16.w,
+                  left: 16.w,
                 ),
                 child: Icon(Icons.search),
               ),
               hintText: hintText,
-              hintStyle: TextStyle(fontSize: 14.sp, color: Colors.blue),
+              hintStyle: TextStyle(fontSize: 14.sp),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.blue, width: 0.33.w),
                 borderRadius: BorderRadius.circular(12.r),

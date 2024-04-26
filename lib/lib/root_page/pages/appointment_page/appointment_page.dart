@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:med_card/core/buttons/action_button.dart';
 import 'package:med_card/core/colors/app_colors.dart';
-
+import 'package:med_card/core/router/app_routes.dart';
 import '../../../../core/bottomsheet/primary_bottom_sheet.dart';
 import 'bloc/appointment_bloc.dart';
 
@@ -19,7 +20,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
     (index) => DateTime.now().add(Duration(days: index)),
   );
 
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -161,6 +162,55 @@ class _AppointmentPageState extends State<AppointmentPage> {
                             );
                           },
                         ),
+                        // SizedBox(height: 20.h),
+                        SizedBox(
+                          height: 130.h,
+                          child: TextFormField(
+                            expands: true,
+                            minLines: null,
+                            maxLines: null,
+                            textAlignVertical: TextAlignVertical.top,
+                            // onChanged: onChanged,
+                            // controller: commentsController,
+                            textInputAction: TextInputAction.next,
+                            decoration: InputDecoration(
+                              filled: true,
+                              contentPadding:
+                                  EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+                              border: InputBorder.none, // Remove border color
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: AppColors.stroke, width: 0.5.w),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: AppColors.primary, width: 0.5.w),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: AppColors.stroke, width: 0.5.w),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: AppColors.stroke, width: 0.5.w),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              hintText: 'Комментарии',
+                              fillColor: Theme.of(context).colorScheme.surfaceTint,
+                              hintStyle: const TextStyle(color: AppColors.textSecondary),
+                            ),
+                          ),
+                        ),
+                        Spacer(),
+                        ActionButton(
+                          text: 'Записаться',
+                          onPressed: () {
+                            Navigator.pushNamed(
+                              context,
+                              AppRoutes.doctorAppointmentPage,
+                            );
+                          },
+                        ),
+                        SizedBox(height: 40.h),
                       ],
                     ),
                   );
