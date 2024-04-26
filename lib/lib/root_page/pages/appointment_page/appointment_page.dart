@@ -111,14 +111,16 @@ class _AppointmentPageState extends State<AppointmentPage> {
                           itemCount: 4, // Number of rows
                           itemBuilder: (context, rowIndex) {
                             final startHour = 8 + (rowIndex * 3);
-                            final endHour = startHour + 1;
                             return Row(
                               children: List.generate(
                                 3,
                                 (colIndex) {
-                                  final startTime =
-                                      TimeOfDay(hour: startHour + colIndex, minute: 0);
-                                  final endTime = TimeOfDay(hour: endHour + colIndex, minute: 0);
+                                  final startTime = TimeOfDay(
+                                      hour: startHour + (colIndex ~/ 2),
+                                      minute: (colIndex % 2) * 30);
+                                  final endTime = colIndex % 2 == 0
+                                      ? TimeOfDay(hour: startHour + (colIndex ~/ 2), minute: 30)
+                                      : TimeOfDay(hour: startHour + (colIndex ~/ 2) + 1, minute: 0);
                                   return Expanded(
                                     child: GestureDetector(
                                       onTap: () {
@@ -133,8 +135,8 @@ class _AppointmentPageState extends State<AppointmentPage> {
                                         decoration: BoxDecoration(
                                           color: state.rowIndex == rowIndex &&
                                                   state.colIndex == colIndex
-                                              ? Colors.blue
-                                              : Colors.white,
+                                              ? AppColors.primary
+                                              : AppColors.float,
                                           borderRadius: BorderRadius.circular(40),
                                           border: Border.all(
                                             color: Colors.grey,
@@ -142,13 +144,13 @@ class _AppointmentPageState extends State<AppointmentPage> {
                                           ),
                                         ),
                                         child: Text(
-                                          '${startTime.format(context)}-${endTime.format(context)}',
+                                          '${startTime.format(context)} - ${endTime.format(context)}',
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             color: state.rowIndex == rowIndex &&
                                                     state.colIndex == colIndex
-                                                ? Colors.white
-                                                : Colors.blue,
+                                                ? AppColors.float
+                                                : AppColors.primary,
                                           ),
                                         ),
                                       ),
