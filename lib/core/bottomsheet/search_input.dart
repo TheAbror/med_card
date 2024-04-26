@@ -51,14 +51,11 @@ class SearchInput extends StatelessWidget {
               prefixIcon: Padding(
                 padding: EdgeInsets.only(
                   right: 8.w,
-                  bottom: 16.h,
-                  top: 16.h,
-                  left: 16.w,
+                  // bottom: 16.h,
+                  // top: 16.h,
+                  // left: 16.w,
                 ),
-                // child: Assets.icons.staffIcons.searchNormal.svg(
-                //   height: 16.h,
-                //   width: 16.h,
-                // ),
+                child: Icon(Icons.search),
               ),
               hintText: hintText,
               hintStyle: TextStyle(fontSize: 14.sp, color: Colors.blue),

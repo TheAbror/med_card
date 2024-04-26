@@ -69,7 +69,7 @@ class DefaultBottomSheet extends StatelessWidget {
                                 behavior: HitTestBehavior.opaque,
                                 child: Padding(
                                     padding: EdgeInsets.only(top: 8.h, bottom: 8.h, right: 8.h),
-                                    child: const Icon(Icons.arrow_left)),
+                                    child: const Icon(Icons.keyboard_arrow_left_rounded)),
                               )
                             : const SizedBox(),
                         if (isConfirmationNeeded == true)
