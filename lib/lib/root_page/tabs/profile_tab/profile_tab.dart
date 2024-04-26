@@ -10,11 +10,11 @@ class ProfileTab extends StatelessWidget {
     return SafeArea(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ElevatedButton(
-            onPressed: () => context.go('/${AppRoutes.coursesPage}'),
-            child: const Text('Open courses page'),
-          ),
+        children: const [
+          // ElevatedButton(
+          //   onPressed: () => context.go('/${AppRoutes.coursesPage}'),
+          //   child: const Text('Open courses page'),
+          // ),
         ],
       ),
     );

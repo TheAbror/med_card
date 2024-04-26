@@ -2,6 +2,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:med_card/core/buttons/action_button.dart';
 import 'package:med_card/core/colors/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:med_card/core/router/app_routes.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
@@ -26,7 +27,7 @@ class HomeTab extends StatelessWidget {
                 Text(
                   'Мой полис',
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                     fontSize: 14.sp,
                     color: AppColors.float,
                   ),
@@ -119,7 +120,14 @@ class HomeTab extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 16.h),
-                  ActionButton(text: 'Записаться', onPressed: () {}),
+                  ActionButton(
+                      text: 'Записаться',
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          AppRoutes.appointmentPage,
+                        );
+                      }),
                   SizedBox(height: 16.h),
                   Container(
                     padding: EdgeInsets.all(8.w),

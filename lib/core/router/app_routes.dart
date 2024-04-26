@@ -3,5 +3,5 @@ abstract class AppRoutes {
   static const rootPage = 'rootPage';
   static const profileTab = 'profile';
   static const homeTab = 'home';
-  static const coursesPage = 'coursesPage';
+  static const appointmentPage = 'appointmentPage';
 }
