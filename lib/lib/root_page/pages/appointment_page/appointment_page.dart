@@ -270,7 +270,7 @@ InputDecoration ToFromDecoration(
   return InputDecoration(
     filled: true,
     contentPadding: EdgeInsets.symmetric(vertical: 1.h, horizontal: 12.w),
-    border: InputBorder.none, // Remove border color
+    border: InputBorder.none,
     enabledBorder: OutlineInputBorder(
       borderSide: BorderSide(color: AppColors.stroke, width: 0.5.w),
       borderRadius: BorderRadius.circular(12),
