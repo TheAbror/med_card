@@ -19,7 +19,7 @@ class MoreTab extends StatelessWidget {
               width: 120.h,
               padding: EdgeInsets.all(2.h),
               decoration: BoxDecoration(
-                color: AppColors.inputField,
+                color: AppColors.iconSecondary,
                 borderRadius: BorderRadius.circular(100.r),
                 border: Border.all(
                   color: Theme.of(context).colorScheme.background,

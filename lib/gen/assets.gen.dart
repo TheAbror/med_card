@@ -15,6 +15,7 @@ class $AssetsIconsGen {
   const $AssetsIconsGen();
 
   $AssetsIconsDownloaderGen get downloader => const $AssetsIconsDownloaderGen();
+  $AssetsIconsFigmaIconsGen get figmaIcons => const $AssetsIconsFigmaIconsGen();
   $AssetsIconsHomeTabIconsGen get homeTabIcons =>
       const $AssetsIconsHomeTabIconsGen();
 }
@@ -71,6 +72,129 @@ class $AssetsIconsDownloaderGen {
   /// List of all assets
   List<SvgGenImage> get values =>
       [docx, downIcon, logoutIcon, moon, other, pdf, ppt, xlsx, zip];
+}
+
+class $AssetsIconsFigmaIconsGen {
+  const $AssetsIconsFigmaIconsGen();
+
+  /// File path: assets/icons/figma_icons/arrow_left.svg
+  SvgGenImage get arrowLeft =>
+      const SvgGenImage('assets/icons/figma_icons/arrow_left.svg');
+
+  /// File path: assets/icons/figma_icons/arrow_right.svg
+  SvgGenImage get arrowRight =>
+      const SvgGenImage('assets/icons/figma_icons/arrow_right.svg');
+
+  /// File path: assets/icons/figma_icons/barcode.svg
+  SvgGenImage get barcode =>
+      const SvgGenImage('assets/icons/figma_icons/barcode.svg');
+
+  /// File path: assets/icons/figma_icons/calendar_tick.svg
+  SvgGenImage get calendarTick =>
+      const SvgGenImage('assets/icons/figma_icons/calendar_tick.svg');
+
+  /// File path: assets/icons/figma_icons/card-tick-2.svg
+  SvgGenImage get cardTick2 =>
+      const SvgGenImage('assets/icons/figma_icons/card-tick-2.svg');
+
+  /// File path: assets/icons/figma_icons/card-tick.svg
+  SvgGenImage get cardTick =>
+      const SvgGenImage('assets/icons/figma_icons/card-tick.svg');
+
+  /// File path: assets/icons/figma_icons/card.svg
+  SvgGenImage get card =>
+      const SvgGenImage('assets/icons/figma_icons/card.svg');
+
+  /// File path: assets/icons/figma_icons/document.svg
+  SvgGenImage get document =>
+      const SvgGenImage('assets/icons/figma_icons/document.svg');
+
+  /// File path: assets/icons/figma_icons/edit.svg
+  SvgGenImage get edit =>
+      const SvgGenImage('assets/icons/figma_icons/edit.svg');
+
+  /// File path: assets/icons/figma_icons/folder.svg
+  SvgGenImage get folder =>
+      const SvgGenImage('assets/icons/figma_icons/folder.svg');
+
+  /// File path: assets/icons/figma_icons/home-filled.svg
+  SvgGenImage get homeFilled =>
+      const SvgGenImage('assets/icons/figma_icons/home-filled.svg');
+
+  /// File path: assets/icons/figma_icons/home.svg
+  SvgGenImage get home =>
+      const SvgGenImage('assets/icons/figma_icons/home.svg');
+
+  /// File path: assets/icons/figma_icons/hospital.svg
+  SvgGenImage get hospital =>
+      const SvgGenImage('assets/icons/figma_icons/hospital.svg');
+
+  /// File path: assets/icons/figma_icons/medcard.svg
+  SvgGenImage get medcard =>
+      const SvgGenImage('assets/icons/figma_icons/medcard.svg');
+
+  /// File path: assets/icons/figma_icons/more-filled.svg
+  SvgGenImage get moreFilled =>
+      const SvgGenImage('assets/icons/figma_icons/more-filled.svg');
+
+  /// File path: assets/icons/figma_icons/more.svg
+  SvgGenImage get more =>
+      const SvgGenImage('assets/icons/figma_icons/more.svg');
+
+  /// File path: assets/icons/figma_icons/notification.svg
+  SvgGenImage get notification =>
+      const SvgGenImage('assets/icons/figma_icons/notification.svg');
+
+  /// File path: assets/icons/figma_icons/record-2.svg
+  SvgGenImage get record2 =>
+      const SvgGenImage('assets/icons/figma_icons/record-2.svg');
+
+  /// File path: assets/icons/figma_icons/records.svg
+  SvgGenImage get records =>
+      const SvgGenImage('assets/icons/figma_icons/records.svg');
+
+  /// File path: assets/icons/figma_icons/tick-circle.svg
+  SvgGenImage get tickCircle =>
+      const SvgGenImage('assets/icons/figma_icons/tick-circle.svg');
+
+  /// File path: assets/icons/figma_icons/user-square.svg
+  SvgGenImage get userSquare =>
+      const SvgGenImage('assets/icons/figma_icons/user-square.svg');
+
+  /// File path: assets/icons/figma_icons/users-2-filled.svg
+  SvgGenImage get users2Filled =>
+      const SvgGenImage('assets/icons/figma_icons/users-2-filled.svg');
+
+  /// File path: assets/icons/figma_icons/users-2.svg
+  SvgGenImage get users2 =>
+      const SvgGenImage('assets/icons/figma_icons/users-2.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+        arrowLeft,
+        arrowRight,
+        barcode,
+        calendarTick,
+        cardTick2,
+        cardTick,
+        card,
+        document,
+        edit,
+        folder,
+        homeFilled,
+        home,
+        hospital,
+        medcard,
+        moreFilled,
+        more,
+        notification,
+        record2,
+        records,
+        tickCircle,
+        userSquare,
+        users2Filled,
+        users2
+      ];
 }
 
 class $AssetsIconsHomeTabIconsGen {

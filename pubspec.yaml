@@ -102,6 +102,7 @@ flutter:
     - assets/icons/
     - assets/icons/downloader/
     - assets/icons/home_tab_icons/
+    - assets/icons/figma_icons/
     
   # fonts:
   #   - family: Schyler
