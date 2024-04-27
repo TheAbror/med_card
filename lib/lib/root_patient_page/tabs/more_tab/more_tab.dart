@@ -69,11 +69,14 @@ class MoreItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16),
+      padding: EdgeInsets.symmetric(
+        horizontal: 16.w,
+        vertical: 17.h,
+      ),
       margin: EdgeInsets.only(bottom: 20.h),
       decoration: BoxDecoration(
         color: AppColors.float,
-        borderRadius: BorderRadius.circular(8.r),
+        borderRadius: BorderRadius.circular(12.r),
       ),
       child: Row(
         children: [
