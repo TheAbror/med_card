@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:med_card/lib/root_page/root_page.dart';
 import 'package:med_card/lib/root_page/tabs/home_tab/home_tab.dart';
-import 'package:med_card/lib/root_page/tabs/profile_tab/profile_tab.dart';
+import 'package:med_card/lib/root_page/tabs/more_tab/more_tab.dart';
 import 'package:med_card/lib/splash_page/splash_page.dart';
 
 import 'app_routes.dart';
@@ -22,9 +22,9 @@ final GoRouter router = GoRouter(
           },
         ),
         GoRoute(
-          path: AppRoutes.profileTab,
+          path: AppRoutes.moreTab,
           builder: (BuildContext context, GoRouterState state) {
-            return const ProfileTab();
+            return const MoreTab();
           },
         ),
         GoRoute(

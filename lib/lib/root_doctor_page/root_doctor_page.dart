@@ -1,19 +1,19 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:med_card/core/colors/app_colors.dart';
-import 'bloc/root_bloc.dart';
-import 'tabs/home_tab/home_tab.dart';
 import 'package:flutter/material.dart';
-import 'tabs/more_tab/more_tab.dart';
 import '../../core/nav_bar/custom_water_drop_nav_bar.dart';
+import '../root_page/bloc/root_bloc.dart';
+import 'tabs/doctor_appointment_tab/timetable_tab/timetable_tab.dart';
+import 'tabs/doctor_more_tab/doctor_more_tab.dart';
 
-class RootPage extends StatefulWidget {
-  const RootPage({super.key});
+class RootDoctorPage extends StatefulWidget {
+  const RootDoctorPage({super.key});
 
   @override
-  State<RootPage> createState() => _RootPageState();
+  State<RootDoctorPage> createState() => _RootDoctorPageState();
 }
 
-class _RootPageState extends State<RootPage> {
+class _RootDoctorPageState extends State<RootDoctorPage> {
   final Color navigationBarColor = Colors.green;
   int selectedIndex = 0;
   late PageController pageController;
@@ -25,16 +25,13 @@ class _RootPageState extends State<RootPage> {
   }
 
   List<Widget> pages = [
-    const HomeTab(),
     Container(
       alignment: Alignment.center,
-      child: Icon(
-        Icons.email,
-        size: 56,
-        color: Colors.blue[400],
-      ),
+      child: Text('Root Doctor Page'),
     ),
-    const MoreTab(),
+    // DoctorAppointmentTab(),
+    TimetableTab(),
+    DoctorMoreTab(),
   ];
 
   @override
@@ -42,22 +39,17 @@ class _RootPageState extends State<RootPage> {
     return BlocBuilder<RootBloc, RootState>(
       builder: (context, state) {
         return Scaffold(
-          appBar: selectedIndex == 1 || selectedIndex == 2
-              ? AppBar(
-                  title: Text(
-                    selectedIndex == 1 ? 'Мед Карта' : 'More',
-                    style: TextStyle(color: AppColors.primary),
-                  ),
-                  elevation: 1,
-                  backgroundColor: AppColors.background,
-                  leading: SizedBox(),
-                )
-              : PreferredSize(
-                  preferredSize: Size.fromHeight(MediaQuery.of(context).padding.top),
-                  child: SizedBox(
-                    height: 0,
-                  ),
-                ),
+          // appBar: selectedIndex == 1 || selectedIndex == 2
+          //     ? AppBar(
+          //         title: Text('More'),
+          //         elevation: 1,
+          //       )
+          //     : PreferredSize(
+          //         preferredSize: Size.fromHeight(MediaQuery.of(context).padding.top),
+          //         child: SizedBox(
+          //           height: 0,
+          //         ),
+          //       ),
           backgroundColor: AppColors.background,
           body: PageView(
             physics: const NeverScrollableScrollPhysics(),
@@ -78,9 +70,9 @@ class _RootPageState extends State<RootPage> {
                 outlinedIcon: Icons.home_outlined,
               ),
               BarItem(
-                label: 'Медкарта',
-                filledIcon: Icons.email_rounded,
-                outlinedIcon: Icons.email_outlined,
+                label: 'Пациенты',
+                filledIcon: Icons.people,
+                outlinedIcon: Icons.people_outline,
               ),
               BarItem(
                 label: 'Еще',

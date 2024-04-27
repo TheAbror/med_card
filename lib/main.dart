@@ -15,6 +15,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:med_card/lib/splash_page/bloc/splash_bloc.dart';
 
+import 'lib/root_page/pages/localization/bloc/localization_bloc.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -36,6 +38,7 @@ void main() async {
           providers: [
             BlocProvider(create: (context) => RootBloc()),
             BlocProvider(create: (context) => SplashBloc()),
+            BlocProvider(create: (_) => LocalizationBloc()..initLocalization()),
           ],
           child: const MyApp(),
         ),

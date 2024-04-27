@@ -6,6 +6,7 @@ part of 'auth_service.dart';
 // ChopperGenerator
 // **************************************************************************
 
+// coverage:ignore-file
 // ignore_for_file: type=lint
 final class _$AuthService extends AuthService {
   _$AuthService([ChopperClient? client]) {
@@ -14,12 +15,11 @@ final class _$AuthService extends AuthService {
   }
 
   @override
-  final definitionType = AuthService;
+  final Type definitionType = AuthService;
 
   @override
   Future<Response<SignInResponse>> signIn(SignInRequest body) {
-    final Uri $url =
-        Uri.parse('https://api.edulab.app/edulab_udea/api/v1/signin');
+    final Uri $url = Uri.parse('http://192.168.100.17:8100/signIn');
     final $body = body;
     final Request $request = Request(
       'POST',

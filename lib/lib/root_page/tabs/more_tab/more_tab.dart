@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:med_card/core/colors/app_colors.dart';
 
-class ProfileTab extends StatelessWidget {
-  const ProfileTab({super.key});
+class MoreTab extends StatelessWidget {
+  const MoreTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,8 +11,8 @@ class ProfileTab extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
               height: 120.h,

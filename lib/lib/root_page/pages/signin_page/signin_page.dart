@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:med_card/core/bloc_progress/bloc_progress.dart';
 import 'package:med_card/core/colors/app_colors.dart';
-import 'package:med_card/gen/assets.gen.dart';
+import 'package:med_card/core/router/app_routes.dart';
 import 'bloc/auth_bloc.dart';
 import 'textfields/sign_in_password_field.dart';
 import 'textfields/sign_in_username_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'widgets/dialog_success_failure.dart';
 import 'widgets/lang_item.dart';
 import 'widgets/navigation_utils.dart';
@@ -67,12 +66,13 @@ class _SignInPageState extends State<SignInPage> {
                         ],
                       ),
                       SizedBox(height: 70.h),
-                      Center(
-                        child: Assets.images.logo4x.image(
-                          width: 260.w,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
+                      // Center(
+                      //   child: Assets.images.logo4x.image(
+                      //     width: 260.w,
+                      //     fit: BoxFit.fill,
+                      //   ),
+                      // ),
+                      Text('Your logo goes here'),
                       SizedBox(height: 20.h),
                       Text(
                         'Sign in',
@@ -134,6 +134,7 @@ class _SignInPageState extends State<SignInPage> {
         final password = _passwordController.text.trim();
         if (_formKey.currentState!.validate()) {
           context.read<AuthBloc>().signIn(username, password);
+          Navigator.pushNamed(context, AppRoutes.rootPage);
         }
       },
       child: Container(
@@ -159,7 +160,7 @@ class _SignInPageState extends State<SignInPage> {
                   style: TextStyle(
                     letterSpacing: 0.5,
                     fontSize: 15.sp,
-                    color: AppColors.primary,
+                    color: AppColors.float,
                     fontWeight: FontWeight.w600,
                   ),
                 ),

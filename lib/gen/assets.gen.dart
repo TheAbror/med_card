@@ -76,6 +76,10 @@ class $AssetsIconsDownloaderGen {
 class $AssetsIconsHomeTabIconsGen {
   const $AssetsIconsHomeTabIconsGen();
 
+  /// File path: assets/icons/home_tab_icons/Indicator.svg
+  SvgGenImage get indicator =>
+      const SvgGenImage('assets/icons/home_tab_icons/Indicator.svg');
+
   /// File path: assets/icons/home_tab_icons/certificate.png
   AssetGenImage get certificate =>
       const AssetGenImage('assets/icons/home_tab_icons/certificate.png');
@@ -101,8 +105,15 @@ class $AssetsIconsHomeTabIconsGen {
       const SvgGenImage('assets/icons/home_tab_icons/share.svg');
 
   /// List of all assets
-  List<dynamic> get values =>
-      [certificate, confettiBottom, confettiMain, confettiTop, cup, share];
+  List<dynamic> get values => [
+        indicator,
+        certificate,
+        confettiBottom,
+        confettiMain,
+        confettiTop,
+        cup,
+        share
+      ];
 }
 
 class $AssetsImagesStoresGen {
