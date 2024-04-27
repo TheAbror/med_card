@@ -162,9 +162,10 @@ class HomeTab extends StatelessWidget {
                                 Text(
                                   'Ближайший 22 июня',
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w300,
-                                      fontSize: 12.sp,
-                                      color: AppColors.iconSecondary),
+                                    fontWeight: FontWeight.w300,
+                                    fontSize: 12.sp,
+                                    color: AppColors.iconSecondary,
+                                  ),
                                 ),
                               ],
                             ),

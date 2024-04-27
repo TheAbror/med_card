@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:med_card/core/colors/app_colors.dart';
+import 'package:med_card/gen/assets.gen.dart';
 
 class MoreTab extends StatelessWidget {
   const MoreTab({super.key});
@@ -39,8 +41,14 @@ class MoreTab extends StatelessWidget {
             Text('Phone Number: +998914309090'),
             Text('Blood type : B3+'),
             SizedBox(height: 20.h),
-            MoreItem(text: 'Illness history'),
-            MoreItem(text: 'Allergy history'),
+            MoreItem(
+              icon: Assets.icons.figmaIcons.record2.path,
+              text: 'Illness history',
+            ),
+            MoreItem(
+              icon: Assets.icons.figmaIcons.barcode.path,
+              text: 'Allergy history',
+            ),
           ],
         ),
       ),
@@ -50,10 +58,12 @@ class MoreTab extends StatelessWidget {
 
 class MoreItem extends StatelessWidget {
   final String text;
+  final String icon;
 
   const MoreItem({
     super.key,
     required this.text,
+    required this.icon,
   });
 
   @override
@@ -67,19 +77,28 @@ class MoreItem extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Icon(
-            Icons.history,
-            color: AppColors.primary,
+          SvgPicture.asset(
+            icon,
+            colorFilter: const ColorFilter.mode(
+              AppColors.primary,
+              BlendMode.srcIn,
+            ),
           ),
           SizedBox(width: 8.w),
           Text(
             text,
-            style: TextStyle(color: AppColors.primary),
+            style: TextStyle(
+              color: AppColors.primary,
+              fontWeight: FontWeight.w400,
+              fontSize: 14.sp,
+            ),
           ),
           Spacer(),
-          Icon(
-            Icons.keyboard_arrow_right_outlined,
-            color: AppColors.primary,
+          Assets.icons.figmaIcons.arrowRight.svg(
+            colorFilter: ColorFilter.mode(
+              AppColors.primary,
+              BlendMode.srcIn,
+            ),
           ),
         ],
       ),
