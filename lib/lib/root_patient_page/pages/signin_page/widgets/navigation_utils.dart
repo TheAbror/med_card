@@ -22,7 +22,7 @@ class NavigationUtils {
         Navigator.pushNamedAndRemoveUntil(context, AppRoutes.rootDoctor, (route) => false);
         break;
       case AccountType.student:
-        Navigator.pushNamedAndRemoveUntil(context, AppRoutes.rootPage, (route) => false);
+        Navigator.pushNamedAndRemoveUntil(context, AppRoutes.rootPatient, (route) => false);
         break;
 
       // to be deleted

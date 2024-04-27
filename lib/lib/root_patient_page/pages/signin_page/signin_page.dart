@@ -134,7 +134,7 @@ class _SignInPageState extends State<SignInPage> {
         final password = _passwordController.text.trim();
         if (_formKey.currentState!.validate()) {
           context.read<AuthBloc>().signIn(username, password);
-          Navigator.pushNamed(context, AppRoutes.rootDoctor);
+          Navigator.pushNamed(context, AppRoutes.rootPatient);
         }
       },
       child: Container(

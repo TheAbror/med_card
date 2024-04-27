@@ -80,7 +80,7 @@ class AppUpdatesView extends StatelessWidget {
                             text: 'Not now'.toUpperCase(),
                             onPressed: () {
                               // context.read<SplashBloc>().setupInitialSettings();
-                              context.go('/${AppRoutes.rootPage}');
+                              context.go('/${AppRoutes.rootPatient}');
                             },
                           ),
                         ),

@@ -34,7 +34,7 @@ class _SplashPageState extends State<SplashPage> {
     return BlocConsumer<SplashBloc, SplashState>(
       listener: (context, state) {
         if ('a' == 'a') {
-          context.go('/${AppRoutes.rootPage}');
+          context.go('/${AppRoutes.rootPatient}');
         }
       },
       builder: (context, state) {

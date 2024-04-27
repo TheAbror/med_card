@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 import 'tabs/more_tab/more_tab.dart';
 import '../../core/nav_bar/custom_water_drop_nav_bar.dart';
 
-class RootPage extends StatefulWidget {
-  const RootPage({super.key});
+class RootPatientPage extends StatefulWidget {
+  const RootPatientPage({super.key});
 
   @override
-  State<RootPage> createState() => _RootPageState();
+  State<RootPatientPage> createState() => _RootPatientPageState();
 }
 
-class _RootPageState extends State<RootPage> {
+class _RootPatientPageState extends State<RootPatientPage> {
   final Color navigationBarColor = Colors.green;
   int selectedIndex = 0;
   late PageController pageController;

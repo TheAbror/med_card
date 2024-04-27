@@ -7,7 +7,7 @@ import 'core/themes/app_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'core/current_user/user_data.dart';
-import 'lib/root_page/bloc/root_bloc.dart';
+import 'lib/root_patient_page/bloc/root_bloc.dart';
 import 'core/current_user/project_keys.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'core/current_user/user_data_box.dart';
@@ -15,7 +15,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:med_card/lib/splash_page/bloc/splash_bloc.dart';
 
-import 'lib/root_page/pages/localization/bloc/localization_bloc.dart';
+import 'lib/root_patient_page/pages/localization/bloc/localization_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

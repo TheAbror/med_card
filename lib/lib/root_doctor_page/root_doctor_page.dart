@@ -3,7 +3,7 @@ import 'package:med_card/core/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:med_card/gen/assets.gen.dart';
 import '../../core/nav_bar/custom_water_drop_nav_bar.dart';
-import '../root_page/bloc/root_bloc.dart';
+import '../root_patient_page/bloc/root_bloc.dart';
 import 'tabs/doctor_appointment_tab/timetable_tab/timetable_tab.dart';
 import 'tabs/doctor_more_tab/doctor_more_tab.dart';
 
