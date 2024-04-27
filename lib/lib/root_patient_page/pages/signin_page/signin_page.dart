@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:med_card/core/bloc_progress/bloc_progress.dart';
 import 'package:med_card/core/colors/app_colors.dart';
 import 'package:med_card/core/router/app_routes.dart';
+import 'package:med_card/gen/assets.gen.dart';
 import 'bloc/auth_bloc.dart';
 import 'textfields/sign_in_password_field.dart';
 import 'textfields/sign_in_username_field.dart';
@@ -22,8 +23,8 @@ class _SignInPageState extends State<SignInPage> {
   final _formKey = GlobalKey<FormState>();
 
 //todo3
-  final _usernameController = TextEditingController(text: 'dsa');
-  final _passwordController = TextEditingController(text: 'as');
+  final _usernameController = TextEditingController(text: '200000001');
+  final _passwordController = TextEditingController(text: '123456');
 
   bool isPasscodeOnDefault = false;
 
@@ -65,15 +66,16 @@ class _SignInPageState extends State<SignInPage> {
                           LangItem('Uz'),
                         ],
                       ),
-                      SizedBox(height: 70.h),
-                      // Center(
-                      //   child: Assets.images.logo4x.image(
-                      //     width: 260.w,
-                      //     fit: BoxFit.fill,
-                      //   ),
-                      // ),
-                      Text('Your logo goes here'),
-                      SizedBox(height: 20.h),
+                      SizedBox(height: 50.h),
+                      Center(
+                        child: Assets.icons.figmaIcons.logo2.svg(
+                          colorFilter: ColorFilter.mode(
+                            AppColors.primary,
+                            BlendMode.srcIn,
+                          ),
+                          height: 140,
+                        ),
+                      ),
                       Text(
                         'Sign in',
                         style: TextStyle(
@@ -82,7 +84,7 @@ class _SignInPageState extends State<SignInPage> {
                           color: Theme.of(context).colorScheme.tertiaryContainer,
                         ),
                       ),
-                      SizedBox(height: 8.h),
+                      SizedBox(height: 4.h),
                       Text(
                         'Enter credentials',
                         style: TextStyle(

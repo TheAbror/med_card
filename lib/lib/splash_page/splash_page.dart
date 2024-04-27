@@ -16,18 +16,18 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  // @override
-  // void initState() {
-  //   super.initState();
+  @override
+  void initState() {
+    super.initState();
 
-  //   Future.delayed(const Duration(seconds: 3)).then((value) {
-  //     Navigator.pushNamedAndRemoveUntil(
-  //       context,
-  //       AppRoutes.signInPage,
-  //       (route) => false,
-  //     );
-  //   });
-  // }
+    Future.delayed(const Duration(seconds: 3)).then((value) {
+      Navigator.pushNamedAndRemoveUntil(
+        context,
+        AppRoutes.signInPage,
+        (route) => false,
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
