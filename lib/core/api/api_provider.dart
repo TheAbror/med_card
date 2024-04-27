@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:chopper/chopper.dart';
 import 'package:med_card/lib/app_updates_page/services/settings_service.dart';
+import 'package:med_card/lib/root_page/pages/signin_page/auth/auth_service.dart';
 import 'auth_interceptor.dart';
 import 'package:http/io_client.dart' as http;
 import 'custom_converter.dart';
@@ -8,6 +9,8 @@ import 'custom_converter.dart';
 class ApiProvider {
   static late ChopperClient _client;
   static late SettingsService settingsService;
+  static late AuthService authService;
+
   static NotAuthorizedInterceptor notAuthorizedInterceptor = NotAuthorizedInterceptor();
 
   ///Services
@@ -18,12 +21,14 @@ class ApiProvider {
       ),
       services: [
         SettingsService.create(),
+        AuthService.create(),
       ],
       interceptors: getInterceptors(token: token),
       converter: CustomDataConverter(),
     );
 
     settingsService = _client.getService<SettingsService>();
+    authService = _client.getService<AuthService>();
   }
 
   static List getInterceptors({String? token}) {

@@ -42,6 +42,17 @@ class _RootPageState extends State<RootPage> {
     return BlocBuilder<RootBloc, RootState>(
       builder: (context, state) {
         return Scaffold(
+          appBar: selectedIndex == 1 || selectedIndex == 2
+              ? AppBar(
+                  title: Text('More'),
+                  elevation: 1,
+                )
+              : PreferredSize(
+                  preferredSize: Size.fromHeight(MediaQuery.of(context).padding.top),
+                  child: SizedBox(
+                    height: 0,
+                  ),
+                ),
           backgroundColor: AppColors.background,
           body: PageView(
             physics: const NeverScrollableScrollPhysics(),

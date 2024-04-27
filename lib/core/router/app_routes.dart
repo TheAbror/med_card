@@ -5,4 +5,5 @@ abstract class AppRoutes {
   static const homeTab = 'home';
   static const appointmentPage = 'appointmentPage';
   static const doctorAppointmentPage = 'doctorAppointmentPage';
+  static const rootDoctor = 'rootDoctor';
 }

@@ -1,3 +1,4 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:med_card/core/router/main_route_generator.dart';
 
 import 'core/api/api_logging.dart';
@@ -55,6 +56,8 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           theme: lightTheme(),
+          builder: BotToastInit(),
+          navigatorObservers: [BotToastNavigatorObserver()],
           themeMode: ThemeMode.system,
           debugShowCheckedModeBanner: false,
           onGenerateRoute: MainRouteGenerator().generateRoute,

@@ -5,6 +5,7 @@ class AppStrings {
 
   static const projetName = 'EduLab';
   static const mobile = 'mobile';
+  static const signIn = 'signIn';
   static const appVersions = 'short_course/api/v1/mobile_settings';
   static const internalErrorMessage = 'Internal error';
 }
