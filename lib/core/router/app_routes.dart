@@ -7,4 +7,5 @@ abstract class AppRoutes {
   static const appointmentPage = 'appointmentPage';
   static const doctorAppointmentPage = 'doctorAppointmentPage';
   static const rootDoctor = 'rootDoctor';
+  static const allSpecialties = 'allSpecialties';
 }

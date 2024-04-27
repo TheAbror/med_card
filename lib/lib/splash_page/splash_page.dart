@@ -16,18 +16,18 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  @override
-  void initState() {
-    super.initState();
+  // @override
+  // void initState() {
+  //   super.initState();
 
-    Future.delayed(const Duration(seconds: 3)).then((value) {
-      Navigator.pushNamedAndRemoveUntil(
-        context,
-        AppRoutes.signInPage,
-        (route) => false,
-      );
-    });
-  }
+  //   Future.delayed(const Duration(seconds: 3)).then((value) {
+  //     Navigator.pushNamedAndRemoveUntil(
+  //       context,
+  //       AppRoutes.signInPage,
+  //       (route) => false,
+  //     );
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -51,19 +51,32 @@ class _SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        const Spacer(),
-        Center(
-          child: Assets.images.logo4x.image(
-            width: 260.w,
-            fit: BoxFit.fill,
+        const Spacer(flex: 2),
+        Assets.icons.figmaIcons.logo2.svg(
+          colorFilter: ColorFilter.mode(
+            AppColors.float,
+            BlendMode.srcIn,
           ),
+          height: 140,
         ),
-        SizedBox(height: 50.h),
+        SizedBox(height: 120.h),
         const Center(
           child: CircularProgressIndicator(color: AppColors.float),
         ),
+        Spacer(),
+        // Row(
+        //   mainAxisAlignment: MainAxisAlignment.end,
+        //   children: [
+        //     Padding(
+        //       padding: EdgeInsets.only(right: 16.w),
+        //       child: Text(
+        //         'Ваша электронная мед карта',
+        //         style: TextStyle(color: AppColors.float, fontSize: 16.sp),
+        //       ),
+        //     ),
+        //   ],
+        // ),
         const Spacer(),
       ],
     );

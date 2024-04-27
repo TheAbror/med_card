@@ -18,6 +18,8 @@ class $AssetsIconsGen {
   $AssetsIconsFigmaIconsGen get figmaIcons => const $AssetsIconsFigmaIconsGen();
   $AssetsIconsHomeTabIconsGen get homeTabIcons =>
       const $AssetsIconsHomeTabIconsGen();
+  $AssetsIconsSpecialtiesGen get specialties =>
+      const $AssetsIconsSpecialtiesGen();
 }
 
 class $AssetsImagesGen {
@@ -129,6 +131,14 @@ class $AssetsIconsFigmaIconsGen {
   SvgGenImage get hospital =>
       const SvgGenImage('assets/icons/figma_icons/hospital.svg');
 
+  /// File path: assets/icons/figma_icons/logo.svg
+  SvgGenImage get logo =>
+      const SvgGenImage('assets/icons/figma_icons/logo.svg');
+
+  /// File path: assets/icons/figma_icons/logo2.svg
+  SvgGenImage get logo2 =>
+      const SvgGenImage('assets/icons/figma_icons/logo2.svg');
+
   /// File path: assets/icons/figma_icons/medcard.svg
   SvgGenImage get medcard =>
       const SvgGenImage('assets/icons/figma_icons/medcard.svg');
@@ -188,6 +198,8 @@ class $AssetsIconsFigmaIconsGen {
         homeFilled,
         home,
         hospital,
+        logo,
+        logo2,
         medcard,
         medcardFilled,
         moreFilled,
@@ -242,6 +254,209 @@ class $AssetsIconsHomeTabIconsGen {
         confettiTop,
         cup,
         share
+      ];
+}
+
+class $AssetsIconsSpecialtiesGen {
+  const $AssetsIconsSpecialtiesGen();
+
+  /// File path: assets/icons/specialties/anesthesiology.svg
+  SvgGenImage get anesthesiology =>
+      const SvgGenImage('assets/icons/specialties/anesthesiology.svg');
+
+  /// File path: assets/icons/specialties/cardiology.svg
+  SvgGenImage get cardiology =>
+      const SvgGenImage('assets/icons/specialties/cardiology.svg');
+
+  /// File path: assets/icons/specialties/dermatology.svg
+  SvgGenImage get dermatology =>
+      const SvgGenImage('assets/icons/specialties/dermatology.svg');
+
+  /// File path: assets/icons/specialties/ear nose and throat.svg
+  SvgGenImage get earNoseAndThroat =>
+      const SvgGenImage('assets/icons/specialties/ear nose and throat.svg');
+
+  /// File path: assets/icons/specialties/emergency care.svg
+  SvgGenImage get emergencyCare =>
+      const SvgGenImage('assets/icons/specialties/emergency care.svg');
+
+  /// File path: assets/icons/specialties/family medicine.svg
+  SvgGenImage get familyMedicine =>
+      const SvgGenImage('assets/icons/specialties/family medicine.svg');
+
+  /// File path: assets/icons/specialties/gastroenterology.svg
+  SvgGenImage get gastroenterology =>
+      const SvgGenImage('assets/icons/specialties/gastroenterology.svg');
+
+  /// File path: assets/icons/specialties/geriatric medicine.svg
+  SvgGenImage get geriatricMedicine =>
+      const SvgGenImage('assets/icons/specialties/geriatric medicine.svg');
+
+  /// File path: assets/icons/specialties/immunology.svg
+  SvgGenImage get immunology =>
+      const SvgGenImage('assets/icons/specialties/immunology.svg');
+
+  /// File path: assets/icons/specialties/internal medicine.svg
+  SvgGenImage get internalMedicine =>
+      const SvgGenImage('assets/icons/specialties/internal medicine.svg');
+
+  /// File path: assets/icons/specialties/natural medicine.svg
+  SvgGenImage get naturalMedicine =>
+      const SvgGenImage('assets/icons/specialties/natural medicine.svg');
+
+  /// File path: assets/icons/specialties/nephrology.svg
+  SvgGenImage get nephrology =>
+      const SvgGenImage('assets/icons/specialties/nephrology.svg');
+
+  /// File path: assets/icons/specialties/neurology.svg
+  SvgGenImage get neurology =>
+      const SvgGenImage('assets/icons/specialties/neurology.svg');
+
+  /// File path: assets/icons/specialties/nuclear medicine.svg
+  SvgGenImage get nuclearMedicine =>
+      const SvgGenImage('assets/icons/specialties/nuclear medicine.svg');
+
+  /// File path: assets/icons/specialties/obstetrics.svg
+  SvgGenImage get obstetrics =>
+      const SvgGenImage('assets/icons/specialties/obstetrics.svg');
+
+  /// File path: assets/icons/specialties/oncology.svg
+  SvgGenImage get oncology =>
+      const SvgGenImage('assets/icons/specialties/oncology.svg');
+
+  /// File path: assets/icons/specialties/ophthalmology.svg
+  SvgGenImage get ophthalmology =>
+      const SvgGenImage('assets/icons/specialties/ophthalmology.svg');
+
+  /// File path: assets/icons/specialties/optometry.svg
+  SvgGenImage get optometry =>
+      const SvgGenImage('assets/icons/specialties/optometry.svg');
+
+  /// File path: assets/icons/specialties/orthopedics.svg
+  SvgGenImage get orthopedics =>
+      const SvgGenImage('assets/icons/specialties/orthopedics.svg');
+
+  /// File path: assets/icons/specialties/pathology.svg
+  SvgGenImage get pathology =>
+      const SvgGenImage('assets/icons/specialties/pathology.svg');
+
+  /// File path: assets/icons/specialties/pediatrics.svg
+  SvgGenImage get pediatrics =>
+      const SvgGenImage('assets/icons/specialties/pediatrics.svg');
+
+  /// File path: assets/icons/specialties/pharmacy 1.svg
+  SvgGenImage get pharmacy1 =>
+      const SvgGenImage('assets/icons/specialties/pharmacy 1.svg');
+
+  /// File path: assets/icons/specialties/pharmacy 2.svg
+  SvgGenImage get pharmacy2 =>
+      const SvgGenImage('assets/icons/specialties/pharmacy 2.svg');
+
+  /// File path: assets/icons/specialties/physical therapy.svg
+  SvgGenImage get physicalTherapy =>
+      const SvgGenImage('assets/icons/specialties/physical therapy.svg');
+
+  /// File path: assets/icons/specialties/plastic surgery.svg
+  SvgGenImage get plasticSurgery =>
+      const SvgGenImage('assets/icons/specialties/plastic surgery.svg');
+
+  /// File path: assets/icons/specialties/podiatry.svg
+  SvgGenImage get podiatry =>
+      const SvgGenImage('assets/icons/specialties/podiatry.svg');
+
+  /// File path: assets/icons/specialties/pregnancy fertility.svg
+  SvgGenImage get pregnancyFertility =>
+      const SvgGenImage('assets/icons/specialties/pregnancy fertility.svg');
+
+  /// File path: assets/icons/specialties/psychology.svg
+  SvgGenImage get psychology =>
+      const SvgGenImage('assets/icons/specialties/psychology.svg');
+
+  /// File path: assets/icons/specialties/public health.svg
+  SvgGenImage get publicHealth =>
+      const SvgGenImage('assets/icons/specialties/public health.svg');
+
+  /// File path: assets/icons/specialties/pulmonology.svg
+  SvgGenImage get pulmonology =>
+      const SvgGenImage('assets/icons/specialties/pulmonology.svg');
+
+  /// File path: assets/icons/specialties/radiology scan 1.svg
+  SvgGenImage get radiologyScan1 =>
+      const SvgGenImage('assets/icons/specialties/radiology scan 1.svg');
+
+  /// File path: assets/icons/specialties/radiology scan 2.svg
+  SvgGenImage get radiologyScan2 =>
+      const SvgGenImage('assets/icons/specialties/radiology scan 2.svg');
+
+  /// File path: assets/icons/specialties/radiology.svg
+  SvgGenImage get radiology =>
+      const SvgGenImage('assets/icons/specialties/radiology.svg');
+
+  /// File path: assets/icons/specialties/rheumatology.svg
+  SvgGenImage get rheumatology =>
+      const SvgGenImage('assets/icons/specialties/rheumatology.svg');
+
+  /// File path: assets/icons/specialties/science.svg
+  SvgGenImage get science =>
+      const SvgGenImage('assets/icons/specialties/science.svg');
+
+  /// File path: assets/icons/specialties/sports medicine.svg
+  SvgGenImage get sportsMedicine =>
+      const SvgGenImage('assets/icons/specialties/sports medicine.svg');
+
+  /// File path: assets/icons/specialties/surgery.svg
+  SvgGenImage get surgery =>
+      const SvgGenImage('assets/icons/specialties/surgery.svg');
+
+  /// File path: assets/icons/specialties/urology.svg
+  SvgGenImage get urology =>
+      const SvgGenImage('assets/icons/specialties/urology.svg');
+
+  /// File path: assets/icons/specialties/water health.svg
+  SvgGenImage get waterHealth =>
+      const SvgGenImage('assets/icons/specialties/water health.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+        anesthesiology,
+        cardiology,
+        dermatology,
+        earNoseAndThroat,
+        emergencyCare,
+        familyMedicine,
+        gastroenterology,
+        geriatricMedicine,
+        immunology,
+        internalMedicine,
+        naturalMedicine,
+        nephrology,
+        neurology,
+        nuclearMedicine,
+        obstetrics,
+        oncology,
+        ophthalmology,
+        optometry,
+        orthopedics,
+        pathology,
+        pediatrics,
+        pharmacy1,
+        pharmacy2,
+        physicalTherapy,
+        plasticSurgery,
+        podiatry,
+        pregnancyFertility,
+        psychology,
+        publicHealth,
+        pulmonology,
+        radiologyScan1,
+        radiologyScan2,
+        radiology,
+        rheumatology,
+        science,
+        sportsMedicine,
+        surgery,
+        urology,
+        waterHealth
       ];
 }
 

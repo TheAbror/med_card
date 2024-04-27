@@ -1,4 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:med_card/core/buttons/action_button.dart';
 import 'package:med_card/core/colors/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -78,12 +79,15 @@ class HomeTab extends StatelessWidget {
                         'Запись',
                         style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.sp),
                       ),
-                      Text(
-                        'Все специальности',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14.sp,
-                          color: AppColors.primary,
+                      GestureDetector(
+                        onTap: () => Navigator.pushNamed(context, AppRoutes.allSpecialties),
+                        child: Text(
+                          'Все специальности',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14.sp,
+                            color: AppColors.primary,
+                          ),
                         ),
                       ),
                     ],
@@ -91,17 +95,17 @@ class HomeTab extends StatelessWidget {
                   SizedBox(height: 10.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: const [
+                    children: [
                       DoctorTypeItem(
-                        icon: Icons.text_increase_outlined,
+                        icon: Assets.icons.specialties.immunology.path,
                         title: 'Терапевт участковый',
                       ),
                       DoctorTypeItem(
-                        icon: Icons.hearing,
+                        icon: Assets.icons.specialties.nephrology.path,
                         title: 'Oторино-лоринголог',
                       ),
                       DoctorTypeItem(
-                        icon: Icons.check_circle_outlined,
+                        icon: Assets.icons.specialties.anesthesiology.path,
                         title: 'Эндокринолог',
                       ),
                     ],
@@ -109,17 +113,17 @@ class HomeTab extends StatelessWidget {
                   SizedBox(height: 10.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: const [
+                    children: [
                       DoctorTypeItem(
-                        icon: Icons.check_circle_outlined,
+                        icon: Assets.icons.specialties.cardiology.path,
                         title: 'Эндокринолог',
                       ),
                       DoctorTypeItem(
-                        icon: Icons.text_increase_outlined,
+                        icon: Assets.icons.specialties.earNoseAndThroat.path,
                         title: 'Терапевт участковый',
                       ),
                       DoctorTypeItem(
-                        icon: Icons.hearing,
+                        icon: Assets.icons.specialties.anesthesiology.path,
                         title: 'Oторино-лоринголог',
                       ),
                     ],
@@ -226,7 +230,7 @@ class HomeTab extends StatelessWidget {
 
 class DoctorTypeItem extends StatelessWidget {
   final String title;
-  final IconData icon;
+  final String icon;
 
   const DoctorTypeItem({
     super.key,
@@ -244,17 +248,19 @@ class DoctorTypeItem extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.float,
         borderRadius: BorderRadius.circular(8.r),
-        // border: Border.all(color: AppColors.outline, width: 0.5.w),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(
-            icon,
-            color: AppColors.primary,
-            size: 26.sp,
-          ),
           SizedBox(height: 5.h),
+          SvgPicture.asset(
+            icon,
+            colorFilter: const ColorFilter.mode(
+              AppColors.primary,
+              BlendMode.srcIn,
+            ),
+          ),
+          SizedBox(height: 8.h),
           Text(
             title,
             style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w500),
