@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:med_card/core/colors/app_colors.dart';
 
 typedef OnButtonPressCallback = void Function(int index);
@@ -156,8 +157,8 @@ class _CustomWaterDropNavBarState extends State<CustomWaterDropNavBar>
 class BuildIconButton extends StatelessWidget {
   final VoidCallback onPressed;
   final AnimationController controller;
-  final IconData selectedIcon;
-  final IconData unslectedIcon;
+  final String selectedIcon;
+  final String unslectedIcon;
   final Color selectedTextColor;
   final Color unSelectedTextColor;
   final String label;
@@ -232,10 +233,12 @@ class BuildIconButton extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 15),
                   child: Column(
                     children: [
-                      Icon(
+                      SvgPicture.asset(
                         unslectedIcon,
-                        size: iconSize,
-                        color: inactiveColor,
+                        colorFilter: const ColorFilter.mode(
+                          AppColors.primary,
+                          BlendMode.srcIn,
+                        ),
                       ),
                       Text(
                         label,
@@ -256,10 +259,12 @@ class BuildIconButton extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 15),
                     child: Column(
                       children: [
-                        Icon(
+                        SvgPicture.asset(
                           selectedIcon,
-                          size: iconSize,
-                          color: color,
+                          colorFilter: const ColorFilter.mode(
+                            AppColors.primary,
+                            BlendMode.srcIn,
+                          ),
                         ),
                         Text(
                           label,
@@ -477,10 +482,10 @@ class IconClipper extends CustomClipper<Rect> {
 
 class BarItem {
   /// Selected or active icon must be filled icon and complementary to inactive icon.
-  final IconData filledIcon;
+  final String filledIcon;
 
   /// Normal or inactive icon must be outlined icon and complementary to active icon.
-  final IconData outlinedIcon;
+  final String outlinedIcon;
 
   final String label;
 

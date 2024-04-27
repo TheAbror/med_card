@@ -133,6 +133,10 @@ class $AssetsIconsFigmaIconsGen {
   SvgGenImage get medcard =>
       const SvgGenImage('assets/icons/figma_icons/medcard.svg');
 
+  /// File path: assets/icons/figma_icons/medcard_filled.svg
+  SvgGenImage get medcardFilled =>
+      const SvgGenImage('assets/icons/figma_icons/medcard_filled.svg');
+
   /// File path: assets/icons/figma_icons/more-filled.svg
   SvgGenImage get moreFilled =>
       const SvgGenImage('assets/icons/figma_icons/more-filled.svg');
@@ -185,6 +189,7 @@ class $AssetsIconsFigmaIconsGen {
         home,
         hospital,
         medcard,
+        medcardFilled,
         moreFilled,
         more,
         notification,

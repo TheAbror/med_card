@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:med_card/core/colors/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:med_card/gen/assets.gen.dart';
 import '../../core/nav_bar/custom_water_drop_nav_bar.dart';
 import '../root_page/bloc/root_bloc.dart';
 import 'tabs/doctor_appointment_tab/timetable_tab/timetable_tab.dart';
@@ -38,6 +39,8 @@ class _RootDoctorPageState extends State<RootDoctorPage> {
   Widget build(BuildContext context) {
     return BlocBuilder<RootBloc, RootState>(
       builder: (context, state) {
+        var route = Assets.icons.figmaIcons;
+
         return Scaffold(
           // appBar: selectedIndex == 1 || selectedIndex == 2
           //     ? AppBar(
@@ -66,18 +69,18 @@ class _RootDoctorPageState extends State<RootDoctorPage> {
             barItems: <BarItem>[
               BarItem(
                 label: 'Главный',
-                filledIcon: Icons.home,
-                outlinedIcon: Icons.home_outlined,
+                outlinedIcon: route.home.path,
+                filledIcon: route.homeFilled.path,
               ),
               BarItem(
                 label: 'Пациенты',
-                filledIcon: Icons.people,
-                outlinedIcon: Icons.people_outline,
+                outlinedIcon: route.users2.path,
+                filledIcon: route.users2Filled.path,
               ),
               BarItem(
                 label: 'Еще',
-                filledIcon: Icons.folder_rounded,
-                outlinedIcon: Icons.folder_outlined,
+                outlinedIcon: route.more.path,
+                filledIcon: route.moreFilled.path,
               ),
             ],
             onItemSelected: (int index) {

@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:med_card/core/colors/app_colors.dart';
+import 'package:med_card/gen/assets.gen.dart';
 import 'bloc/root_bloc.dart';
 import 'tabs/home_tab/home_tab.dart';
 import 'package:flutter/material.dart';
@@ -41,6 +42,8 @@ class _RootPageState extends State<RootPage> {
   Widget build(BuildContext context) {
     return BlocBuilder<RootBloc, RootState>(
       builder: (context, state) {
+        var route = Assets.icons.figmaIcons;
+
         return Scaffold(
           appBar: selectedIndex == 1 || selectedIndex == 2
               ? AppBar(
@@ -74,18 +77,18 @@ class _RootPageState extends State<RootPage> {
             barItems: <BarItem>[
               BarItem(
                 label: 'Главный',
-                filledIcon: Icons.home,
-                outlinedIcon: Icons.home_outlined,
+                outlinedIcon: route.home.path,
+                filledIcon: route.homeFilled.path,
               ),
               BarItem(
                 label: 'Медкарта',
-                filledIcon: Icons.email_rounded,
-                outlinedIcon: Icons.email_outlined,
+                outlinedIcon: route.medcard.path,
+                filledIcon: route.medcardFilled.path,
               ),
               BarItem(
                 label: 'Еще',
-                filledIcon: Icons.folder_rounded,
-                outlinedIcon: Icons.folder_outlined,
+                outlinedIcon: route.more.path,
+                filledIcon: route.moreFilled.path,
               ),
             ],
             onItemSelected: (int index) {

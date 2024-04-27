@@ -3,6 +3,7 @@ import 'package:med_card/core/buttons/action_button.dart';
 import 'package:med_card/core/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:med_card/core/router/app_routes.dart';
+import 'package:med_card/gen/assets.gen.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
@@ -18,10 +19,11 @@ class HomeTab extends StatelessWidget {
             padding: EdgeInsets.only(right: 16.w, left: 16.w, top: 50.h),
             child: Row(
               children: [
-                Icon(
-                  Icons.add_card_rounded,
-                  color: AppColors.float,
-                  size: 26.sp,
+                Assets.icons.figmaIcons.cardTick2.svg(
+                  colorFilter: ColorFilter.mode(
+                    AppColors.float,
+                    BlendMode.srcIn,
+                  ),
                 ),
                 SizedBox(width: 5.w),
                 Text(
@@ -32,22 +34,25 @@ class HomeTab extends StatelessWidget {
                     color: AppColors.float,
                   ),
                 ),
-                Icon(
-                  Icons.keyboard_arrow_right_outlined,
-                  color: AppColors.float,
-                  size: 26.sp,
+                Assets.icons.figmaIcons.arrowRight.svg(
+                  colorFilter: ColorFilter.mode(
+                    AppColors.float,
+                    BlendMode.srcIn,
+                  ),
                 ),
                 Spacer(),
-                Icon(
-                  Icons.qr_code,
-                  color: AppColors.float,
-                  size: 26.sp,
+                Assets.icons.figmaIcons.barcode.svg(
+                  colorFilter: ColorFilter.mode(
+                    AppColors.float,
+                    BlendMode.srcIn,
+                  ),
                 ),
-                SizedBox(width: 5.w),
-                Icon(
-                  Icons.notifications_active,
-                  color: AppColors.float,
-                  size: 26.sp,
+                SizedBox(width: 8.w),
+                Assets.icons.figmaIcons.notification.svg(
+                  colorFilter: ColorFilter.mode(
+                    AppColors.float,
+                    BlendMode.srcIn,
+                  ),
                 ),
               ],
             ),
@@ -131,7 +136,7 @@ class HomeTab extends StatelessWidget {
                   ),
                   SizedBox(height: 16.h),
                   Container(
-                    padding: EdgeInsets.all(8.w),
+                    padding: EdgeInsets.all(12.w),
                     decoration: BoxDecoration(
                       color: AppColors.float,
                       borderRadius: BorderRadius.circular(8.r),
@@ -140,10 +145,11 @@ class HomeTab extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Icon(
-                              Icons.house,
-                              color: AppColors.primary,
-                              size: 26.sp,
+                            Assets.icons.figmaIcons.record2.svg(
+                              colorFilter: ColorFilter.mode(
+                                AppColors.primary,
+                                BlendMode.srcIn,
+                              ),
                             ),
                             SizedBox(width: 10.w),
                             Column(
@@ -163,11 +169,12 @@ class HomeTab extends StatelessWidget {
                               ],
                             ),
                             Spacer(),
-                            Icon(
-                              Icons.keyboard_arrow_right_outlined,
-                              color: AppColors.primary,
-                              size: 24.sp,
-                            )
+                            Assets.icons.figmaIcons.arrowRight.svg(
+                              colorFilter: ColorFilter.mode(
+                                AppColors.primary,
+                                BlendMode.srcIn,
+                              ),
+                            ),
                           ],
                         ),
                         SizedBox(height: 5.h),
@@ -178,10 +185,11 @@ class HomeTab extends StatelessWidget {
                         SizedBox(height: 5.h),
                         Row(
                           children: [
-                            Icon(
-                              Icons.edit_document,
-                              color: AppColors.primary,
-                              size: 26.sp,
+                            Assets.icons.figmaIcons.edit.svg(
+                              colorFilter: ColorFilter.mode(
+                                AppColors.primary,
+                                BlendMode.srcIn,
+                              ),
                             ),
                             SizedBox(width: 10.w),
                             Column(
@@ -194,19 +202,17 @@ class HomeTab extends StatelessWidget {
                               ],
                             ),
                             Spacer(),
-                            Icon(
-                              Icons.keyboard_arrow_right_outlined,
-                              color: AppColors.primary,
-                              size: 24.sp,
-                            )
+                            Assets.icons.figmaIcons.arrowRight.svg(
+                              colorFilter: ColorFilter.mode(
+                                AppColors.primary,
+                                BlendMode.srcIn,
+                              ),
+                            ),
                           ],
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 500,
-                  )
                 ],
               ),
             ),

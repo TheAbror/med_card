@@ -22,8 +22,8 @@ class _SignInPageState extends State<SignInPage> {
   final _formKey = GlobalKey<FormState>();
 
 //todo3
-  final _usernameController = TextEditingController();
-  final _passwordController = TextEditingController();
+  final _usernameController = TextEditingController(text: 'dsa');
+  final _passwordController = TextEditingController(text: 'as');
 
   bool isPasscodeOnDefault = false;
 
@@ -134,7 +134,7 @@ class _SignInPageState extends State<SignInPage> {
         final password = _passwordController.text.trim();
         if (_formKey.currentState!.validate()) {
           context.read<AuthBloc>().signIn(username, password);
-          Navigator.pushNamed(context, AppRoutes.rootPage);
+          Navigator.pushNamed(context, AppRoutes.rootDoctor);
         }
       },
       child: Container(
