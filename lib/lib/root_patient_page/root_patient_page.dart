@@ -89,7 +89,7 @@ class _RootPatientPageState extends State<RootPatientPage> {
                 filledIcon: route.homeFilled.path,
               ),
               BarItem(
-                label: 'Медкарта',
+                label: 'Мед Карта',
                 outlinedIcon: route.medcard.path,
                 filledIcon: route.medcardFilled.path,
               ),
