@@ -107,6 +107,14 @@ class $AssetsIconsFigmaIconsGen {
   SvgGenImage get card =>
       const SvgGenImage('assets/icons/figma_icons/card.svg');
 
+  /// File path: assets/icons/figma_icons/chat_empty.svg
+  SvgGenImage get chatEmpty =>
+      const SvgGenImage('assets/icons/figma_icons/chat_empty.svg');
+
+  /// File path: assets/icons/figma_icons/chat_filed.svg
+  SvgGenImage get chatFiled =>
+      const SvgGenImage('assets/icons/figma_icons/chat_filed.svg');
+
   /// File path: assets/icons/figma_icons/document.svg
   SvgGenImage get document =>
       const SvgGenImage('assets/icons/figma_icons/document.svg');
@@ -208,6 +216,8 @@ class $AssetsIconsFigmaIconsGen {
         cardTick2,
         cardTick,
         card,
+        chatEmpty,
+        chatFiled,
         document,
         edit,
         faceId,

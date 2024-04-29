@@ -35,6 +35,14 @@ class _RootPatientPageState extends State<RootPatientPage> {
         color: Colors.blue[400],
       ),
     ),
+    Container(
+      alignment: Alignment.center,
+      child: Icon(
+        Icons.chat,
+        size: 56,
+        color: Colors.blue[400],
+      ),
+    ),
     const MoreTab(),
   ];
 
@@ -45,7 +53,7 @@ class _RootPatientPageState extends State<RootPatientPage> {
         var route = Assets.icons.figmaIcons;
 
         return Scaffold(
-          appBar: selectedIndex == 1 || selectedIndex == 2
+          appBar: selectedIndex == 1 || selectedIndex == 3
               ? AppBar(
                   title: Text(
                     selectedIndex == 1 ? 'Мед Карта' : 'More',
@@ -84,6 +92,11 @@ class _RootPatientPageState extends State<RootPatientPage> {
                 label: 'Медкарта',
                 outlinedIcon: route.medcard.path,
                 filledIcon: route.medcardFilled.path,
+              ),
+              BarItem(
+                label: 'Dr.AI',
+                outlinedIcon: route.chatEmpty.path,
+                filledIcon: route.chatFiled.path,
               ),
               BarItem(
                 label: 'Еще',
