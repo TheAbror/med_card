@@ -9,4 +9,5 @@ abstract class AppRoutes {
   static const rootDoctor = 'rootDoctor';
   static const allSpecialties = 'allSpecialties';
   static const govAuthPage = 'govAuthPage';
+  static const faceIdentificationPage = 'faceIdentificationPage';
 }

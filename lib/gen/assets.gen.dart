@@ -115,6 +115,14 @@ class $AssetsIconsFigmaIconsGen {
   SvgGenImage get edit =>
       const SvgGenImage('assets/icons/figma_icons/edit.svg');
 
+  /// File path: assets/icons/figma_icons/face_id.png
+  AssetGenImage get faceId =>
+      const AssetGenImage('assets/icons/figma_icons/face_id.png');
+
+  /// File path: assets/icons/figma_icons/face_identification.png
+  AssetGenImage get faceIdentification =>
+      const AssetGenImage('assets/icons/figma_icons/face_identification.png');
+
   /// File path: assets/icons/figma_icons/folder.svg
   SvgGenImage get folder =>
       const SvgGenImage('assets/icons/figma_icons/folder.svg');
@@ -202,6 +210,8 @@ class $AssetsIconsFigmaIconsGen {
         card,
         document,
         edit,
+        faceId,
+        faceIdentification,
         folder,
         homeFilled,
         home,

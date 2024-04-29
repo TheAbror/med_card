@@ -144,7 +144,7 @@ class _SignInPageState extends State<SignInPage> {
         width: double.infinity,
         decoration: BoxDecoration(
           color: AppColors.primary,
-          borderRadius: BorderRadius.all(Radius.circular(40.r)),
+          borderRadius: BorderRadius.all(Radius.circular(12.r)),
           border: Border.all(color: AppColors.primary, width: 1),
         ),
         child: Center(

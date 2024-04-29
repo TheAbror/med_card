@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:med_card/core/router/app_routes.dart';
 import 'package:med_card/core/router/cupertino_style_navigation_route.dart';
+import 'package:med_card/lib/gov_auth_page/face_identification_page.dart';
 import 'package:med_card/lib/gov_auth_page/gov_auth_page.dart';
 import 'package:med_card/lib/root_doctor_page/root_doctor_page.dart';
 import 'package:med_card/lib/root_patient_page/pages/appointment_page/appointment_page.dart';
@@ -49,6 +50,10 @@ class MainRouteGenerator {
       case AppRoutes.govAuthPage:
         return CustomCupertinoStyleNavigationRoute(
           builder: (_) => GovAuthPage(),
+        );
+      case AppRoutes.faceIdentificationPage:
+        return CustomCupertinoStyleNavigationRoute(
+          builder: (_) => FaceIdentificationPage(),
         );
 
       default:

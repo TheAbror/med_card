@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:med_card/core/buttons/action_button.dart';
 import 'package:med_card/core/colors/app_colors.dart';
+import 'package:med_card/core/router/app_routes.dart';
 import 'package:med_card/gen/assets.gen.dart';
 
 class GovAuthPage extends StatelessWidget {
@@ -70,7 +71,11 @@ class GovAuthPage extends StatelessWidget {
               ),
             ),
             Spacer(),
-            ActionButton(text: 'Check data', onPressed: () {}),
+            ActionButton(
+                text: 'Check data',
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.faceIdentificationPage);
+                }),
             SizedBox(height: 40.h),
           ],
         ),
