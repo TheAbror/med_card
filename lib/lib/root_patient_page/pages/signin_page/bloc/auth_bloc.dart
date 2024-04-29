@@ -83,6 +83,7 @@ class AuthBloc extends Cubit<AuthState> {
     emit(state.copyWith(isPasswordHidden: item));
   }
 
+  // ignore: unused_element
   AccountType _getAccountTypeFromRoles(List<String> roles) {
     if (roles.any((e) => e == AppRoles.superAdmin)) {
       return AccountType.superAdmin;

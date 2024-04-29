@@ -139,6 +139,14 @@ class $AssetsIconsFigmaIconsGen {
   SvgGenImage get logo2 =>
       const SvgGenImage('assets/icons/figma_icons/logo2.svg');
 
+  /// File path: assets/icons/figma_icons/logo3.png
+  AssetGenImage get logo3 =>
+      const AssetGenImage('assets/icons/figma_icons/logo3.png');
+
+  /// File path: assets/icons/figma_icons/logo4.png
+  AssetGenImage get logo4 =>
+      const AssetGenImage('assets/icons/figma_icons/logo4.png');
+
   /// File path: assets/icons/figma_icons/medcard.svg
   SvgGenImage get medcard =>
       const SvgGenImage('assets/icons/figma_icons/medcard.svg');
@@ -184,7 +192,7 @@ class $AssetsIconsFigmaIconsGen {
       const SvgGenImage('assets/icons/figma_icons/users-2.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [
+  List<dynamic> get values => [
         arrowLeft,
         arrowRight,
         barcode,
@@ -200,6 +208,8 @@ class $AssetsIconsFigmaIconsGen {
         hospital,
         logo,
         logo2,
+        logo3,
+        logo4,
         medcard,
         medcardFilled,
         moreFilled,

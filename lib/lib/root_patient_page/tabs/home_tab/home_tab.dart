@@ -35,10 +35,16 @@ class HomeTab extends StatelessWidget {
                     color: AppColors.float,
                   ),
                 ),
-                Assets.icons.figmaIcons.arrowRight.svg(
-                  colorFilter: ColorFilter.mode(
-                    AppColors.float,
-                    BlendMode.srcIn,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoutes.govAuthPage);
+                  },
+                  behavior: HitTestBehavior.opaque,
+                  child: Assets.icons.figmaIcons.arrowRight.svg(
+                    colorFilter: ColorFilter.mode(
+                      AppColors.float,
+                      BlendMode.srcIn,
+                    ),
                   ),
                 ),
                 Spacer(),

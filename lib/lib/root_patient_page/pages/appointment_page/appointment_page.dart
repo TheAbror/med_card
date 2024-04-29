@@ -41,29 +41,31 @@ class _AppointmentPageState extends State<AppointmentPage> {
                       bottom: BorderSide(color: AppColors.float, width: 3.0),
                     ),
                   ),
-                  tabs: days.map((day) {
-                    String dayLabel = '';
-                    if (day.day == DateTime.now().day) {
-                      dayLabel = 'Сегодня';
-                    } else {
-                      dayLabel = day.weekday == 1
-                          ? 'Пн'
-                          : day.weekday == 2
-                              ? 'Вт'
-                              : day.weekday == 3
-                                  ? 'Ср'
-                                  : day.weekday == 4
-                                      ? 'Чт'
-                                      : day.weekday == 5
-                                          ? 'Пт'
-                                          : day.weekday == 6
-                                              ? 'Сб'
-                                              : 'Вс';
-                    }
-                    return Tab(
-                      text: '$dayLabel ${day.day}',
-                    );
-                  }).toList(),
+                  tabs: days.map(
+                    (day) {
+                      String dayLabel = '';
+                      if (day.day == DateTime.now().day) {
+                        dayLabel = 'Сегодня';
+                      } else {
+                        dayLabel = day.weekday == 1
+                            ? 'Пн'
+                            : day.weekday == 2
+                                ? 'Вт'
+                                : day.weekday == 3
+                                    ? 'Ср'
+                                    : day.weekday == 4
+                                        ? 'Чт'
+                                        : day.weekday == 5
+                                            ? 'Пт'
+                                            : day.weekday == 6
+                                                ? 'Сб'
+                                                : 'Вс';
+                      }
+                      return Tab(
+                        text: '$dayLabel ${day.day}',
+                      );
+                    },
+                  ).toList(),
                 ),
               ),
               body: TabBarView(
