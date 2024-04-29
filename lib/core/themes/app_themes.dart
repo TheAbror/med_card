@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:med_card/gen/fonts.gen.dart';
 
 import '../colors/app_colors.dart';
 
 ThemeData lightTheme() {
   return ThemeData(
-    // fontFamily: FontFamily.lato,
+    fontFamily: FontFamily.roboto,
     colorScheme: ColorScheme.light(
       primary: AppColors.primary,
       background: AppColors.background,

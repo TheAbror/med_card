@@ -4,8 +4,9 @@ import 'package:med_card/gen/assets.gen.dart';
 import 'bloc/root_bloc.dart';
 import 'tabs/home_tab/home_tab.dart';
 import 'package:flutter/material.dart';
-import 'tabs/more_tab/more_tab.dart';
+import 'tabs/med_card_tab/med_card_tab.dart';
 import '../../core/nav_bar/custom_water_drop_nav_bar.dart';
+import 'tabs/more_tab/more_tab.dart';
 
 class RootPatientPage extends StatefulWidget {
   const RootPatientPage({super.key});
@@ -27,14 +28,7 @@ class _RootPatientPageState extends State<RootPatientPage> {
 
   List<Widget> pages = [
     const HomeTab(),
-    Container(
-      alignment: Alignment.center,
-      child: Icon(
-        Icons.email,
-        size: 56,
-        color: Colors.blue[400],
-      ),
-    ),
+    const MedCardTab(),
     Container(
       alignment: Alignment.center,
       child: Icon(
@@ -43,7 +37,7 @@ class _RootPatientPageState extends State<RootPatientPage> {
         color: Colors.blue[400],
       ),
     ),
-    const MoreTab(),
+    MobileTab(),
   ];
 
   @override
@@ -53,13 +47,17 @@ class _RootPatientPageState extends State<RootPatientPage> {
         var route = Assets.icons.figmaIcons;
 
         return Scaffold(
-          appBar: selectedIndex == 1 || selectedIndex == 3
+          appBar: selectedIndex == 1 || selectedIndex == 2 || selectedIndex == 3
               ? AppBar(
                   title: Text(
-                    selectedIndex == 1 ? 'Мед Карта' : 'More',
+                    selectedIndex == 1
+                        ? 'Мед Карта'
+                        : selectedIndex == 2
+                            ? 'Dr.AI'
+                            : 'More',
                     style: TextStyle(color: AppColors.primary),
                   ),
-                  elevation: 1,
+                  elevation: 0.1,
                   backgroundColor: AppColors.background,
                   leading: SizedBox(),
                 )

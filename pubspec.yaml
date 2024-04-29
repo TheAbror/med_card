@@ -61,6 +61,9 @@ dependencies:
 
   intl: ^0.18.1
 
+  flutter_dialogs: ^3.0.0
+
+
 
 
 
@@ -106,17 +109,12 @@ flutter:
     - assets/icons/figma_icons/
     - assets/icons/specialties/
     
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-
+  fonts:
+    - family: Lato
+      fonts:
+        - asset: assets/fonts/Lato-Regular.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Light.ttf
 
   # water_drop_nav_bar: ^2.2.1 got bottom nav_bar from here

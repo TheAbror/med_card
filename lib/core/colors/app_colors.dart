@@ -8,6 +8,8 @@ class AppColors {
   static const Color textSecondary = Color(0XFF858B91);
   static const Color iconSecondary = Color(0XFFA7A7A7);
   static const Color outline = Color(0XFFDEDEDE);
+  static const Color rest = Color(0XFFF3F3F3);
+
   static const Color stroke = Color(0XFFECECEC);
   static const Color background = Color(0XFFF6F6F6);
   static const Color inputField = Color(0XFFF5F5F5);
