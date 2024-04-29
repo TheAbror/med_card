@@ -93,7 +93,7 @@ class _SignInPageState extends State<SignInPage> {
                           color: Theme.of(context).colorScheme.tertiaryContainer,
                         ),
                       ),
-                      SizedBox(height: 30.h),
+                      SizedBox(height: 10.h),
                       Text(
                         'ID',
                         style: TextStyle(
@@ -104,7 +104,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                       SizedBox(height: 5.h),
                       SignInUsernameField(usernameController: _usernameController),
-                      SizedBox(height: 24.h),
+                      SizedBox(height: 16.h),
                       Text(
                         'Password',
                         style: TextStyle(

@@ -13,7 +13,7 @@ class GovAuthPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        elevation: 0.1,
+        elevation: 0,
         backgroundColor: AppColors.background,
         leading: IconButton(
           onPressed: () {

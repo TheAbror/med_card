@@ -13,7 +13,25 @@ class AllSpecialties extends StatelessWidget {
   Widget build(BuildContext context) {
     final route = Assets.icons.specialties;
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: AppColors.background,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: AppColors.background,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          padding: EdgeInsets.zero,
+          constraints: BoxConstraints(),
+          icon: Assets.icons.figmaIcons.arrowLeft.svg(
+            colorFilter: ColorFilter.mode(
+              AppColors.primary,
+              BlendMode.srcIn,
+            ),
+            width: 24.w,
+          ),
+        ),
+      ),
       body: Padding(
         padding: EdgeInsets.all(16.w),
         child: Column(
