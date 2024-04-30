@@ -84,7 +84,9 @@ class DoctorAppointmentTab extends StatelessWidget {
                       ),
                       SizedBox(width: 4.w),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, AppRoutes.acceptPatientPage);
+                        },
                         child: Container(
                           height: 35.h,
                           margin: EdgeInsets.only(right: 12.w),

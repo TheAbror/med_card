@@ -11,4 +11,5 @@ abstract class AppRoutes {
   static const govAuthPage = 'govAuthPage';
   static const faceIdentificationPage = 'faceIdentificationPage';
   static const patientdetailsPage = 'patientdetailsPage';
+  static const acceptPatientPage = 'acceptPatientPage';
 }

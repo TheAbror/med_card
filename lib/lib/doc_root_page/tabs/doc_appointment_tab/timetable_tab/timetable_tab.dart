@@ -60,7 +60,7 @@ class _TimetableTabState extends State<TimetableTab> {
                           ),
                         ),
                         SizedBox(height: 16.h),
-                        SizedBox(height: 50, child: const CalendarDates()),
+                        const CalendarDates(),
                       ],
                     ),
                   ),
