@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:med_card/core/bloc_progress/bloc_progress.dart';
 import 'package:med_card/lib/root_patient_page/pages/localization/bloc/localization_bloc.dart';
-import '../doctor_appointment_tab.dart';
+import '../doc_appointment_tab.dart';
 import 'bloc/timetable_bloc.dart';
 import 'widgets/calendar_dates.dart';
 

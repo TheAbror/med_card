@@ -4,17 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:med_card/gen/assets.gen.dart';
 import '../../core/nav_bar/custom_water_drop_nav_bar.dart';
 import '../root_patient_page/bloc/root_bloc.dart';
-import 'tabs/doctor_appointment_tab/timetable_tab/timetable_tab.dart';
-import 'tabs/doctor_more_tab/doctor_more_tab.dart';
+import 'tabs/doc_appointment_tab/timetable_tab/timetable_tab.dart';
+import 'tabs/doc_more_tab/doc_more_tab.dart';
 
-class RootDoctorPage extends StatefulWidget {
-  const RootDoctorPage({super.key});
+class DocRootPage extends StatefulWidget {
+  const DocRootPage({super.key});
 
   @override
-  State<RootDoctorPage> createState() => _RootDoctorPageState();
+  State<DocRootPage> createState() => _DocRootPageState();
 }
 
-class _RootDoctorPageState extends State<RootDoctorPage> {
+class _DocRootPageState extends State<DocRootPage> {
   final Color navigationBarColor = Colors.green;
   int selectedIndex = 0;
   late PageController pageController;
