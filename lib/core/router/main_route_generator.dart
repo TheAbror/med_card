@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:med_card/core/router/app_routes.dart';
 import 'package:med_card/core/router/cupertino_style_navigation_route.dart';
+import 'package:med_card/lib/doc_root_page/doc_root_page.dart';
+import 'package:med_card/lib/doc_root_page/tabs/doc_appointment_tab/doc_appointment_tab.dart';
 import 'package:med_card/lib/gov_auth_page/face_identification_page.dart';
 import 'package:med_card/lib/gov_auth_page/gov_auth_page.dart';
 import 'package:med_card/lib/root_patient_page/pages/appointment_page/appointment_page.dart';
@@ -9,9 +11,6 @@ import 'package:med_card/lib/root_patient_page/root_patient_page.dart';
 import 'package:med_card/lib/root_patient_page/tabs/home_tab/all_specialties.dart';
 import 'package:med_card/lib/root_patient_page/tabs/home_tab/home_tab.dart';
 import 'package:med_card/lib/splash_page/splash_page.dart';
-
-import '../../lib/doc_root_page/doc_root_page.dart';
-import '../../lib/doc_root_page/tabs/doc_appointment_tab/doc_appointment_tab.dart';
 
 class MainRouteGenerator {
   Route<dynamic>? generateRoute(RouteSettings settings) {
@@ -40,7 +39,7 @@ class MainRouteGenerator {
         return CustomCupertinoStyleNavigationRoute(
           builder: (_) => SignInPage(),
         );
-      case AppRoutes.rootDoctor:
+      case AppRoutes.docRoot:
         return CustomCupertinoStyleNavigationRoute(
           builder: (_) => DocRootPage(),
         );

@@ -14,12 +14,12 @@ class NavigationUtils {
       case AccountType.director:
         Navigator.pushNamedAndRemoveUntil(
           context,
-          AppRoutes.rootDoctor,
+          AppRoutes.docRoot,
           (route) => false,
         );
         break;
       case AccountType.staff:
-        Navigator.pushNamedAndRemoveUntil(context, AppRoutes.rootDoctor, (route) => false);
+        Navigator.pushNamedAndRemoveUntil(context, AppRoutes.docRoot, (route) => false);
         break;
       case AccountType.student:
         Navigator.pushNamedAndRemoveUntil(context, AppRoutes.rootPatient, (route) => false);
@@ -27,7 +27,7 @@ class NavigationUtils {
 
       // to be deleted
       case AccountType.unknown:
-        Navigator.pushNamedAndRemoveUntil(context, AppRoutes.rootDoctor, (route) => false);
+        Navigator.pushNamedAndRemoveUntil(context, AppRoutes.docRoot, (route) => false);
         break;
       //
       default:
