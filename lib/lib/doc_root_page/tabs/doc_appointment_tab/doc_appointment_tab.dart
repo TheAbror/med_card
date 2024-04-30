@@ -49,30 +49,112 @@ class DoctorAppointmentTab extends StatelessWidget {
                       Text('Parcel number :' '#$index${1423}$index'),
                       Text('Problem topic: Lorem ipsum'),
                       Text('Comment: Lorem ipsum'),
+                      // SizedBox(
+                      //   width: 300,
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.end,
+                      //     children: [
+                      //       GestureDetector(
+                      //         onTap: () {},
+                      //         child: Container(
+                      //           height: 35.h,
+                      //           margin: EdgeInsets.only(right: 12.w),
+                      //           width: 60.w,
+                      //           decoration: BoxDecoration(
+                      //             color: AppColors.primary,
+                      //             borderRadius: BorderRadius.all(Radius.circular(8.r)),
+                      //           ),
+                      //           child: Center(
+                      //             child: Text(
+                      //               'View',
+                      //               style: TextStyle(
+                      //                 letterSpacing: 0.5,
+                      //                 fontSize: 15.sp,
+                      //                 color: AppColors.float,
+                      //                 fontWeight: FontWeight.w600,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //         ),
+                      //       ),
+                      //       GestureDetector(
+                      //         onTap: () {},
+                      //         child: Container(
+                      //           height: 35.h,
+                      //           margin: EdgeInsets.only(right: 12.w),
+                      //           width: 60.w,
+                      //           decoration: BoxDecoration(
+                      //             color: AppColors.primary,
+                      //             borderRadius: BorderRadius.all(Radius.circular(8.r)),
+                      //           ),
+                      //           child: Center(
+                      //             child: Text(
+                      //               'View',
+                      //               style: TextStyle(
+                      //                 letterSpacing: 0.5,
+                      //                 fontSize: 15.sp,
+                      //                 color: AppColors.float,
+                      //                 fontWeight: FontWeight.w600,
+                      //               ),
+                      //             ),
+                      //           ),
+                      //         ),
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
                     ],
                   ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      height: 35.h,
-                      margin: EdgeInsets.only(right: 12.w),
-                      width: 60.w,
-                      decoration: BoxDecoration(
-                        color: AppColors.primary,
-                        borderRadius: BorderRadius.all(Radius.circular(8.r)),
-                      ),
-                      child: Center(
-                        child: Text(
-                          'View',
-                          style: TextStyle(
-                            letterSpacing: 0.5,
-                            fontSize: 15.sp,
-                            color: AppColors.float,
-                            fontWeight: FontWeight.w600,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          height: 35.h,
+                          width: 60.w,
+                          decoration: BoxDecoration(
+                              color: AppColors.float,
+                              borderRadius: BorderRadius.all(Radius.circular(8.r)),
+                              border: Border.all(color: AppColors.primary)),
+                          child: Center(
+                            child: Text(
+                              'Details',
+                              style: TextStyle(
+                                letterSpacing: 0.5,
+                                fontSize: 15.sp,
+                                color: AppColors.primary,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
+                      SizedBox(width: 4.w),
+                      GestureDetector(
+                        onTap: () {},
+                        child: Container(
+                          height: 35.h,
+                          margin: EdgeInsets.only(right: 12.w),
+                          width: 60.w,
+                          decoration: BoxDecoration(
+                            color: AppColors.primary,
+                            borderRadius: BorderRadius.all(Radius.circular(8.r)),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Accept',
+                              style: TextStyle(
+                                letterSpacing: 0.5,
+                                fontSize: 15.sp,
+                                color: AppColors.float,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

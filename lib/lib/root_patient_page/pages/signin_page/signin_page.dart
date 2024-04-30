@@ -8,7 +8,6 @@ import 'bloc/auth_bloc.dart';
 import 'textfields/sign_in_password_field.dart';
 import 'textfields/sign_in_username_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'widgets/dialog_success_failure.dart';
 import 'widgets/lang_item.dart';
 import 'widgets/navigation_utils.dart';
 
@@ -41,12 +40,13 @@ class _SignInPageState extends State<SignInPage> {
                 context,
                 state.accountType,
               );
-            } else if (state.blocProgress == BlocProgress.FAILED) {
-              showMessage(
-                state.failureMessage,
-                isError: true,
-              );
             }
+            // else if (state.blocProgress == BlocProgress.FAILED) {
+            //   showMessage(
+            //     state.failureMessage,
+            //     isError: true,
+            //   );
+            // }
           },
           builder: (context, state) {
             return Form(
