@@ -10,4 +10,5 @@ abstract class AppRoutes {
   static const allSpecialties = 'allSpecialties';
   static const govAuthPage = 'govAuthPage';
   static const faceIdentificationPage = 'faceIdentificationPage';
+  static const patientdetailsPage = 'patientdetailsPage';
 }

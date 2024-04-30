@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:med_card/core/colors/app_colors.dart';
+import 'package:med_card/core/router/app_routes.dart';
 
 class DoctorAppointmentTab extends StatelessWidget {
   const DoctorAppointmentTab({super.key});
@@ -49,67 +50,15 @@ class DoctorAppointmentTab extends StatelessWidget {
                       Text('Parcel number :' '#$index${1423}$index'),
                       Text('Problem topic: Lorem ipsum'),
                       Text('Comment: Lorem ipsum'),
-                      // SizedBox(
-                      //   width: 300,
-                      //   child: Row(
-                      //     mainAxisAlignment: MainAxisAlignment.end,
-                      //     children: [
-                      //       GestureDetector(
-                      //         onTap: () {},
-                      //         child: Container(
-                      //           height: 35.h,
-                      //           margin: EdgeInsets.only(right: 12.w),
-                      //           width: 60.w,
-                      //           decoration: BoxDecoration(
-                      //             color: AppColors.primary,
-                      //             borderRadius: BorderRadius.all(Radius.circular(8.r)),
-                      //           ),
-                      //           child: Center(
-                      //             child: Text(
-                      //               'View',
-                      //               style: TextStyle(
-                      //                 letterSpacing: 0.5,
-                      //                 fontSize: 15.sp,
-                      //                 color: AppColors.float,
-                      //                 fontWeight: FontWeight.w600,
-                      //               ),
-                      //             ),
-                      //           ),
-                      //         ),
-                      //       ),
-                      //       GestureDetector(
-                      //         onTap: () {},
-                      //         child: Container(
-                      //           height: 35.h,
-                      //           margin: EdgeInsets.only(right: 12.w),
-                      //           width: 60.w,
-                      //           decoration: BoxDecoration(
-                      //             color: AppColors.primary,
-                      //             borderRadius: BorderRadius.all(Radius.circular(8.r)),
-                      //           ),
-                      //           child: Center(
-                      //             child: Text(
-                      //               'View',
-                      //               style: TextStyle(
-                      //                 letterSpacing: 0.5,
-                      //                 fontSize: 15.sp,
-                      //                 color: AppColors.float,
-                      //                 fontWeight: FontWeight.w600,
-                      //               ),
-                      //             ),
-                      //           ),
-                      //         ),
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, AppRoutes.patientdetailsPage);
+                        },
                         child: Container(
                           height: 35.h,
                           width: 60.w,
