@@ -36,7 +36,10 @@ class DoctorAppointmentTab extends StatelessWidget {
             expandedCrossAxisAlignment: CrossAxisAlignment.start,
             expandedAlignment: Alignment.bottomLeft,
             childrenPadding: EdgeInsets.only(bottom: 10.h, left: 12.w),
-            title: Text(listOfPatients[index]),
+            title: Text(
+              listOfPatients[index],
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

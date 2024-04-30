@@ -82,11 +82,11 @@ class _PatientDetailsPageState extends State<PatientDetailsPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Time :' ' 12:00'),
-                        Text('Phone Number: +998914309090'),
-                        Text('Parcel number :' 'qweqw'),
-                        Text('Problem topic: Lorem ipsum'),
-                        Text('Comment: Lorem ipsum'),
+                        Text('No results'),
+                        // Text('Phone Number: +998914309090'),
+                        // Text('Parcel number :' 'qweqw'),
+                        // Text('Problem topic: Lorem ipsum'),
+                        // Text('Comment: Lorem ipsum'),
                       ],
                     ),
                   ]),
