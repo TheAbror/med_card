@@ -6,7 +6,7 @@ import 'package:med_card/gen/assets.gen.dart';
 
 class MedCardTab extends StatelessWidget {
   const MedCardTab({super.key});
-  //TODO  shows charts of illnesses
+  //
 
   @override
   Widget build(BuildContext context) {
