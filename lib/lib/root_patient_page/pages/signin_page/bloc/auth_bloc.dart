@@ -8,8 +8,7 @@ import 'package:med_card/core/bloc_progress/error.dart';
 import 'package:med_card/core/utils/app_strings.dart';
 import 'package:med_card/lib/splash_page/auth_status/account_type.dart';
 
-import '../auth/model/user_info.dart';
-import '../auth/models/auth.dart';
+import '../../../model/patient_model.dart';
 
 part 'auth_state.dart';
 
@@ -23,39 +22,32 @@ class AuthBloc extends Cubit<AuthState> {
   void signIn(String username, String password) async {
     emit(state.copyWith(blocProgress: BlocProgress.IS_LOADING));
 
-    final request = SignInRequest(username: username, password: password, type: 'ID');
+    final request = SignInRequest(
+      patient_birthdate: '2001-04-23',
+      patient_fullname: 'dasdas',
+      patient_gender: 'dasd',
+      patient_phone: '9982341234',
+      user: PatientAsUser(
+        password: 'dasd',
+        email: 'dasda@gmail.com',
+        username: '1234213',
+      ),
+    );
 
     try {
-      final response = await ApiProvider.authService.signIn(request);
+      final response = await ApiProvider.authService.signIN(request);
 
       if (response.isSuccessful) {
         final data = response.body;
 
         if (data != null) {
-          final token = data.token;
-          // final roles = data.userInfo.roles;
-          // final fullName = '${data.userInfo.firstname} ${data.userInfo.lastname}';
-          // final shortName = '${data.userInfo.firstname[0]}${data.userInfo.lastname[0]}';
+          // final token = data.token;
 
-          ApiProvider.create(token: token);
-
-          // boxCurrentUser.put(
-          //   ShPrefKeys.currentUser,
-          //   CurrentUser(
-          //     fullName: fullName,
-          //     shortName: shortName,
-          //     token: token,
-          //     userID: username,
-          //     roles: roles,
-          //   ),
-          // );
-
-          // final accountType = _getAccountTypeFromRoles(roles);
-          // await PreferencesServices.saveAccountType(accountType);
+          // ApiProvider.create(token: token);
 
           emit(
             state.copyWith(
-              data: data,
+              // data: data,
               blocProgress: BlocProgress.IS_SUCCESS,
               // accountType: accountType,
             ),

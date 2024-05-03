@@ -18,8 +18,9 @@ final class _$AuthService extends AuthService {
   final Type definitionType = AuthService;
 
   @override
-  Future<Response<SignInResponse>> signIn(SignInRequest body) {
-    final Uri $url = Uri.parse('http://192.168.100.17:8100/signIn');
+  Future<Response<PatientAsUser>> signIN(SignInRequest body) {
+    final Uri $url =
+        Uri.parse('https://wiut3.pythonanywhere.com/api/patient_crud/');
     final $body = body;
     final Request $request = Request(
       'POST',
@@ -27,6 +28,6 @@ final class _$AuthService extends AuthService {
       client.baseUrl,
       body: $body,
     );
-    return client.send<SignInResponse, SignInResponse>($request);
+    return client.send<PatientAsUser, PatientAsUser>($request);
   }
 }

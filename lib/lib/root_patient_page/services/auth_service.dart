@@ -1,8 +1,7 @@
 import 'package:chopper/chopper.dart';
 import 'package:med_card/core/utils/app_strings.dart';
 
-import 'model/user_info.dart';
-import 'models/auth.dart';
+import '../model/patient_model.dart';
 
 part 'auth_service.chopper.dart';
 
@@ -11,5 +10,5 @@ abstract class AuthService extends ChopperService {
   static AuthService create([ChopperClient? client]) => _$AuthService(client ?? ChopperClient());
 
   @Post(path: AppStrings.signIn)
-  Future<Response<SignInResponse>> signIn(@Body() SignInRequest body);
+  Future<Response<PatientAsUser>> signIN(@Body() SignInRequest body);
 }

@@ -1,7 +1,7 @@
 part of 'auth_bloc.dart';
 
 class AuthState extends Equatable {
-  final SignInResponse data;
+  final SignInRequest data;
   final bool isPasswordHidden;
   final BlocProgress blocProgress;
   final AccountType accountType;
@@ -18,19 +18,15 @@ class AuthState extends Equatable {
   factory AuthState.initial() {
     return AuthState(
       isPasswordHidden: true,
-      data: SignInResponse(
-        token: '',
-        userInfo: UserInfoResponse(
-          id: 0,
-          firstname: '',
-          lastname: '',
-          accountType: '',
-          status: '',
-          username: 0,
+      data: SignInRequest(
+        patient_birthdate: '',
+        patient_fullname: '',
+        patient_gender: '',
+        patient_phone: '',
+        user: PatientAsUser(
+          password: '',
           email: '',
-          roles: [],
-          institutionInfo: InstitutionResponse(id: 1, title: ''),
-          academicYears: [],
+          username: '',
         ),
       ),
       accountType: AccountType.unknown,
@@ -40,7 +36,7 @@ class AuthState extends Equatable {
   }
 
   AuthState copyWith({
-    SignInResponse? data,
+    SignInRequest? data,
     bool? isPasswordHidden,
     BlocProgress? blocProgress,
     AccountType? accountType,

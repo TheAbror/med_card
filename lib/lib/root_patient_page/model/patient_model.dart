@@ -4,11 +4,9 @@ part 'patient_model.g.dart';
 
 // {
 //   "user": {
-//     "id": 0,
-//     "username": "OLb_U1M2ZJZtAJJZrfm0QDV7m52.cprwqQ97NCW@0A_vnlUN1f",
-//     "email": "user@example.com",
-//     "first_name": "string",
-//     "last_name": "string"
+//     "username": "q0axu7t_nFr1.zf+bz96evD.xStvGL8v",
+//     "password": "string",
+//     "email": "user@example.com"
 //   },
 //   "patient_fullname": "string",
 //   "patient_birthdate": "2024-05-03",
@@ -17,14 +15,14 @@ part 'patient_model.g.dart';
 // }
 
 @JsonSerializable(includeIfNull: true)
-class SignUpRequest {
+class SignInRequest {
   final String patient_fullname;
   final String patient_birthdate;
   final String patient_phone;
   final String patient_gender;
   final PatientAsUser user;
 
-  SignUpRequest({
+  SignInRequest({
     required this.patient_fullname,
     required this.patient_birthdate,
     required this.patient_phone,
@@ -32,21 +30,19 @@ class SignUpRequest {
     required this.user,
   });
 
-  factory SignUpRequest.fromJson(Map<String, dynamic> json) => _$SignUpRequestFromJson(json);
+  factory SignInRequest.fromJson(Map<String, dynamic> json) => _$SignInRequestFromJson(json);
 
-  Map<String, dynamic> toJson() => _$SignUpRequestToJson(this);
+  Map<String, dynamic> toJson() => _$SignInRequestToJson(this);
 }
 
 @JsonSerializable(includeIfNull: true)
 class PatientAsUser {
-  final String first_name;
-  final String last_name;
   final String email;
+  final String password;
   final String username;
 
   PatientAsUser({
-    required this.first_name,
-    required this.last_name,
+    required this.password,
     required this.email,
     required this.username,
   });

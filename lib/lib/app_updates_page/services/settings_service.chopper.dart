@@ -20,7 +20,7 @@ final class _$SettingsService extends SettingsService {
   @override
   Future<Response<AppVersionResponse>> getAppVersions() {
     final Uri $url = Uri.parse(
-        'http://192.168.100.17:8100/short_course/api/v1/mobile_settings');
+        'https://wiut3.pythonanywhere.com/api/short_course/api/v1/mobile_settings');
     final Request $request = Request(
       'GET',
       $url,

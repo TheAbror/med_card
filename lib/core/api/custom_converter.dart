@@ -2,6 +2,7 @@
 
 import 'package:chopper/chopper.dart';
 import 'package:med_card/lib/app_updates_page/models/app_version_response.dart';
+import 'package:med_card/lib/root_patient_page/model/patient_model.dart';
 
 class CustomDataConverter extends JsonConverter {
   @override
@@ -41,6 +42,11 @@ dynamic deserialize<SingleItemType>(Map<String, dynamic> json) {
 
     case AppVersionResponse:
       return AppVersionResponse.fromJson(json);
+
+    case SignInRequest:
+      return SignInRequest.fromJson(json);
+    case PatientAsUser:
+      return PatientAsUser.fromJson(json);
 
     default:
       return null;

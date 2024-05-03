@@ -6,8 +6,8 @@ part of 'patient_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SignUpRequest _$SignUpRequestFromJson(Map<String, dynamic> json) =>
-    SignUpRequest(
+SignInRequest _$SignInRequestFromJson(Map<String, dynamic> json) =>
+    SignInRequest(
       patient_fullname: json['patient_fullname'] as String,
       patient_birthdate: json['patient_birthdate'] as String,
       patient_phone: json['patient_phone'] as String,
@@ -15,7 +15,7 @@ SignUpRequest _$SignUpRequestFromJson(Map<String, dynamic> json) =>
       user: PatientAsUser.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$SignUpRequestToJson(SignUpRequest instance) =>
+Map<String, dynamic> _$SignInRequestToJson(SignInRequest instance) =>
     <String, dynamic>{
       'patient_fullname': instance.patient_fullname,
       'patient_birthdate': instance.patient_birthdate,
@@ -26,16 +26,14 @@ Map<String, dynamic> _$SignUpRequestToJson(SignUpRequest instance) =>
 
 PatientAsUser _$PatientAsUserFromJson(Map<String, dynamic> json) =>
     PatientAsUser(
-      first_name: json['first_name'] as String,
-      last_name: json['last_name'] as String,
+      password: json['password'] as String,
       email: json['email'] as String,
       username: json['username'] as String,
     );
 
 Map<String, dynamic> _$PatientAsUserToJson(PatientAsUser instance) =>
     <String, dynamic>{
-      'first_name': instance.first_name,
-      'last_name': instance.last_name,
       'email': instance.email,
+      'password': instance.password,
       'username': instance.username,
     };
