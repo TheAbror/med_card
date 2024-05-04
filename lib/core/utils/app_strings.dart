@@ -15,10 +15,6 @@ class AppStrings {
     'Bekzod Mamatov',
     'Dilnoza Rakhimova',
     'Gulnoza Nurmatova',
-    'Feruza Tursunova',
-    'Nigora Saidova',
-    'Mavluda Akhmedova',
-    'Madina Ruzmetova',
   ];
   static const listOfPills = [
     'Аскорбиновая кислота - 500 мг, 10 таблеток',
