@@ -3,12 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:med_card/core/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:med_card/gen/assets.gen.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
 import '../../core/nav_bar/custom_water_drop_nav_bar.dart';
 import '../root_patient_page/bloc/root_bloc.dart';
 import 'charts/weekly_chart.dart';
 import 'tabs/doc_appointment_tab/timetable_tab/timetable_tab.dart';
 import 'tabs/doc_more_tab/doc_more_tab.dart';
+import 'widgets/doctor_home_appbar.dart';
 
 class DocRootPage extends StatefulWidget {
   const DocRootPage({super.key});
@@ -35,22 +35,10 @@ class _DocRootPageState extends State<DocRootPage> {
         child: Column(
           children: [
             WeeklyChart(),
-            // CircularPercentIndicator(
-            //   radius: 120.0,
-            //   lineWidth: 13.0,
-            //   animation: true,
-            //   percent: 0.7,
-            //   center: Text(
-            //     '70.0%',
-            //     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-            //   ),
-            //   footer: Text(
-            //     "Sales this week",
-            //     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
-            //   ),
-            //   circularStrokeCap: CircularStrokeCap.round,
-            //   progressColor: Colors.purple,
-            // ),
+            Text(
+              'data',
+              style: TextStyle(fontSize: 0.sp),
+            )
           ],
         ),
       ),
@@ -67,14 +55,11 @@ class _DocRootPageState extends State<DocRootPage> {
         var route = Assets.icons.figmaIcons;
 
         return Scaffold(
-          appBar: selectedIndex == 1 || selectedIndex == 2
-              ? AppBar(
-                  title: Text('More'),
-                  elevation: 1,
-                )
-              : home_app_bar(
-                  context,
-                  () {},
+          appBar: selectedIndex == 0
+              ? home_app_bar(context, () {})
+              : PreferredSize(
+                  preferredSize: Size.fromHeight(MediaQuery.of(context).padding.top),
+                  child: SizedBox(height: 0),
                 ),
           backgroundColor: AppColors.background,
           body: PageView(
@@ -119,84 +104,6 @@ class _DocRootPageState extends State<DocRootPage> {
           ),
         );
       },
-    );
-  }
-}
-
-PreferredSize home_app_bar(BuildContext context, VoidCallback onTap) {
-  return PreferredSize(
-    preferredSize: Size.fromHeight(50.h),
-    child: Container(
-      margin: EdgeInsets.only(left: 8.w, right: 8.w, top: 45.h),
-      padding: EdgeInsets.only(bottom: 6.h, top: 6.h, left: 12.w, right: 20.w),
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surfaceVariant,
-        borderRadius: BorderRadius.all(Radius.circular(12.r)),
-      ),
-      child: Row(
-        children: [
-          GestureDetector(
-            onTap: onTap,
-            child: AvatarBox(shortName: 'AS'),
-          ),
-          SizedBox(width: 10.w),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Abror Shamuradov',
-                  style: TextStyle(
-                    fontSize: 17.sp,
-                    fontWeight: FontWeight.w700,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-                SizedBox(height: 2.h),
-                Text(
-                  'fds',
-                  style: TextStyle(
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w200,
-                    color: const Color(0XFF8C8C8C),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    ),
-  );
-}
-
-class AvatarBox extends StatelessWidget {
-  final String shortName;
-
-  const AvatarBox({
-    super.key,
-    required this.shortName,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 40.h,
-      height: 40.h,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        color: AppColors.inputField,
-        borderRadius: BorderRadius.all(Radius.circular(4 * 3.r)),
-      ),
-      child: Text(
-        shortName,
-        style: TextStyle(
-          fontSize: 14.sp,
-          color: AppColors.textMain,
-        ),
-        textAlign: TextAlign.center,
-      ),
     );
   }
 }
