@@ -54,7 +54,7 @@ class _AcceptPatientPageState extends State<AcceptPatientPage> {
                 Expanded(
                   child: Container(
                     height: 40.h,
-                    padding: EdgeInsets.only(left: 12.w),
+                    padding: EdgeInsets.only(left: 12.w, top: 9.h),
                     decoration: BoxDecoration(
                       color: AppColors.float,
                       borderRadius: BorderRadius.circular(8.r),
@@ -70,7 +70,14 @@ class _AcceptPatientPageState extends State<AcceptPatientPage> {
             SizedBox(height: 20.h),
             Row(
               children: [
-                Icon(Icons.abc),
+                Assets.icons.homeTabIcons.indicator.svg(
+                    colorFilter: ColorFilter.mode(
+                      AppColors.iconSecondary,
+                      BlendMode.srcIn,
+                    ),
+                    fit: BoxFit.fill,
+                    height: 10),
+                SizedBox(width: 10.w),
                 Text('Tap to start microphone'),
                 Spacer(),
                 Container(
