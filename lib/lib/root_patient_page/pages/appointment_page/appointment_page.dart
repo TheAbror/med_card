@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:med_card/core/buttons/action_button.dart';
 import 'package:med_card/core/colors/app_colors.dart';
 import 'package:med_card/core/router/app_routes.dart';
+import 'package:med_card/core/utils/app_strings.dart';
 import '../../../../core/bottomsheet/primary_bottom_sheet.dart';
 import 'bloc/appointment_bloc.dart';
 
@@ -86,18 +87,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
                               isConfirmationNeeded: false,
                               title: 'Выберите доктора',
                               selectedValue: 'Abror Shamuradov',
-                              initialList: [
-                                'Abror Shamuradov',
-                                'Abbosjon Vositov',
-                                'Aziza Usmanova',
-                                'Bekzod Mamatov',
-                                'Dilnoza Rakhimova',
-                                'Gulnoza Nurmatova',
-                                'Feruza Tursunova',
-                                'Nigora Saidova',
-                                'Mavluda Akhmedova',
-                                'Madina Ruzmetova',
-                              ],
+                              initialList: AppStrings.patientList,
                             );
 
                             if (result != null) {

@@ -31,19 +31,16 @@ class _TimetableTabState extends State<TimetableTab> {
       create: (context) => TimetableBloc(),
       child: BlocBuilder<TimetableBloc, TimetableState>(
         builder: (context, state) {
-          return SingleChildScrollView(
-            physics: NeverScrollableScrollPhysics(),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                _appBar(context, formattedDate, dayofWeek, year),
-                SizedBox(height: 14.h),
-                Expanded(
-                  flex: state.blocProgress == BlocProgress.IS_LOADING ? 0 : 1,
-                  child: DoctorAppointmentTab(),
-                ),
-              ],
-            ),
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              _appBar(context, formattedDate, dayofWeek, year),
+              SizedBox(height: 14.h),
+              Expanded(
+                flex: state.blocProgress == BlocProgress.IS_LOADING ? 0 : 1,
+                child: DoctorAppointmentTab(),
+              ),
+            ],
           );
         },
       ),

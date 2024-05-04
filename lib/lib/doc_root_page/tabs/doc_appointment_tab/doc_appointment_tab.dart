@@ -2,45 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:med_card/core/colors/app_colors.dart';
 import 'package:med_card/core/router/app_routes.dart';
+import 'package:med_card/core/utils/app_strings.dart';
 
 class DoctorAppointmentTab extends StatelessWidget {
   const DoctorAppointmentTab({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final List<String> listOfPatients = [
-      'Abror Shamuradov',
-      'Abbosjon Vositov',
-      'Aziza Usmanova',
-      'Bekzod Mamatov',
-      'Dilnoza Rakhimova',
-      'Gulnoza Nurmatova',
-      'Feruza Tursunova',
-      'Nigora Saidova',
-      'Mavluda Akhmedova',
-      'Madina Ruzmetova',
-      'Abror Shamuradov1',
-      'Abbosjon Vositov2',
-      'Aziza Usmanova3',
-      'Bekzod Mamatov4',
-      'Dilnoza Rakhimova5',
-      'Gulnoza Nurmatova6',
-      'Feruza Tursunova7',
-      'Nigora Saidova8',
-      'Mavluda Akhmedova9',
-      'Madina Ruzmetova10',
-    ];
     return ListView.builder(
       shrinkWrap: true,
       physics: BouncingScrollPhysics(),
-      itemCount: listOfPatients.length,
+      itemCount: AppStrings.patientList.length,
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       itemBuilder: (context, index) {
         return Card(
           elevation: 1,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16.0),
-          ),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
           child: ExpansionTile(
             shape: Border(),
             maintainState: true,
@@ -48,7 +25,7 @@ class DoctorAppointmentTab extends StatelessWidget {
             expandedAlignment: Alignment.bottomLeft,
             childrenPadding: EdgeInsets.only(bottom: 10.h, left: 12.w),
             title: Text(
-              listOfPatients[index],
+              AppStrings.patientList[index],
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             children: [

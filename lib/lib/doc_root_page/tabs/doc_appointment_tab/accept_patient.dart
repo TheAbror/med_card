@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:med_card/core/bottomsheet/primary_bottom_sheet.dart';
 import 'package:med_card/core/colors/app_colors.dart';
+import 'package:med_card/core/utils/app_strings.dart';
 import 'package:med_card/gen/assets.gen.dart';
+import 'package:med_card/lib/root_patient_page/pages/appointment_page/appointment_page.dart';
 
-class AcceptPatientPage extends StatelessWidget {
+class AcceptPatientPage extends StatefulWidget {
   const AcceptPatientPage({super.key});
+
+  @override
+  State<AcceptPatientPage> createState() => _AcceptPatientPageState();
+}
+
+class _AcceptPatientPageState extends State<AcceptPatientPage> {
+  final TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -41,13 +51,19 @@ class AcceptPatientPage extends StatelessWidget {
               children: [
                 CircleAvatar(),
                 SizedBox(width: 8.w),
-                Container(
-                  height: 40.h,
-                  // width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: AppColors.float,
+                Expanded(
+                  child: Container(
+                    height: 40.h,
+                    padding: EdgeInsets.only(left: 12.w),
+                    decoration: BoxDecoration(
+                      color: AppColors.float,
+                      borderRadius: BorderRadius.circular(8.r),
+                    ),
+                    child: Text(
+                      'Abror Shamuradov',
+                      style: TextStyle(fontSize: 16.sp),
+                    ),
                   ),
-                  child: Text('Abror Shamuradov'),
                 ),
               ],
             ),
@@ -72,6 +88,29 @@ class AcceptPatientPage extends StatelessWidget {
               ],
             ),
             SizedBox(height: 20.h),
+            FromToFields(
+              hintText: 'Выберите лекарство',
+              suffixIcon: true,
+              controller: _controller,
+              onTap: () async {
+                final result = await PrimaryBottomSheet.show(
+                  context,
+                  isSearchNeeded: true,
+                  heightRatio: 0.9,
+                  isConfirmationNeeded: false,
+                  title: 'Выберите лекарство',
+                  selectedValue: 'Abror Shamuradov',
+                  initialList: AppStrings.listOfPills,
+                );
+
+                if (result != null) {
+                  if (!mounted) return;
+                  _controller.text = result;
+                  print(result);
+                }
+              },
+            ),
+            SizedBox(height: 20.h),
             Expanded(
               flex: 5,
               child: Container(
@@ -82,7 +121,6 @@ class AcceptPatientPage extends StatelessWidget {
                 ),
               ),
             ),
-            //TODO add lecartsvo spisok
             Spacer(),
           ],
         ),
