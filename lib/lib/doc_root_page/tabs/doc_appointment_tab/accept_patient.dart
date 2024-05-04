@@ -82,6 +82,7 @@ class AcceptPatientPage extends StatelessWidget {
                 ),
               ),
             ),
+            //TODO add lecartsvo spisok
             Spacer(),
           ],
         ),
