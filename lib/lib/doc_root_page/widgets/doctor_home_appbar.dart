@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:med_card/core/colors/app_colors.dart';
+import 'package:med_card/gen/assets.gen.dart';
 
 PreferredSize home_app_bar(BuildContext context, VoidCallback onTap) {
   return PreferredSize(
@@ -42,6 +43,17 @@ PreferredSize home_app_bar(BuildContext context, VoidCallback onTap) {
                   ),
                 ),
               ],
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              //TODO import qr scanner package
+            },
+            child: Assets.icons.figmaIcons.barcode.svg(
+              colorFilter: ColorFilter.mode(
+                AppColors.primary,
+                BlendMode.srcIn,
+              ),
             ),
           ),
         ],

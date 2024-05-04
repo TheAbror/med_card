@@ -32,7 +32,7 @@ class WeeklyChartState extends State<WeeklyChart> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Text(
-                  'Weekly patiens per day',
+                  'Patiens per day',
                   style: TextStyle(
                     color: AppColors.textMain,
                     fontSize: 20.sp,
@@ -152,7 +152,7 @@ class WeeklyChartState extends State<WeeklyChart> {
             return BarTooltipItem(
               '$weekDay\n',
               const TextStyle(
-                color: AppColors.textMain,
+                color: AppColors.float,
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
@@ -160,7 +160,7 @@ class WeeklyChartState extends State<WeeklyChart> {
                 TextSpan(
                   text: (rod.toY - 1).toString(),
                   style: const TextStyle(
-                    color: AppColors.textMain,
+                    color: AppColors.float,
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                   ),
