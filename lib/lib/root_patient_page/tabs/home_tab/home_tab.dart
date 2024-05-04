@@ -48,10 +48,40 @@ class HomeTab extends StatelessWidget {
                   ),
                 ),
                 Spacer(),
-                Assets.icons.figmaIcons.barcode.svg(
-                  colorFilter: ColorFilter.mode(
-                    AppColors.float,
-                    BlendMode.srcIn,
+                GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Material(
+                          color: Colors.transparent,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              GestureDetector(
+                                onTap: () => Navigator.pop(context),
+                                child: Container(
+                                  margin: EdgeInsets.symmetric(horizontal: 16.h),
+                                  padding: EdgeInsets.all(16.w),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.float,
+                                    borderRadius: BorderRadius.circular(12.r),
+                                  ),
+                                  child: Assets.images.qRCode.svg(),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                  },
+                  child: Assets.icons.figmaIcons.barcode.svg(
+                    colorFilter: ColorFilter.mode(
+                      AppColors.float,
+                      BlendMode.srcIn,
+                    ),
                   ),
                 ),
                 SizedBox(width: 8.w),

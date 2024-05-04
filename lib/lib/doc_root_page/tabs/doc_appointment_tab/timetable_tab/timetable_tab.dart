@@ -32,39 +32,11 @@ class _TimetableTabState extends State<TimetableTab> {
       child: BlocBuilder<TimetableBloc, TimetableState>(
         builder: (context, state) {
           return SingleChildScrollView(
+            physics: NeverScrollableScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Material(
-                  elevation: 0.1,
-                  child: Container(
-                    color: Theme.of(context).colorScheme.surfaceVariant,
-                    padding: EdgeInsets.symmetric(horizontal: 12.h),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 50.h),
-                        Text(
-                          'Расписание',
-                          style: TextStyle(
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                        SizedBox(height: 4.h),
-                        Text(
-                          // '${context.localizations.today} -
-                          '$formattedDate, $dayofWeek - $year',
-                          style: TextStyle(
-                            fontSize: 11.sp,
-                            color: const Color(0XFF9DA4B2),
-                          ),
-                        ),
-                        SizedBox(height: 16.h),
-                        const CalendarDates(),
-                      ],
-                    ),
-                  ),
-                ),
+                _appBar(context, formattedDate, dayofWeek, year),
                 SizedBox(height: 14.h),
                 Expanded(
                   flex: state.blocProgress == BlocProgress.IS_LOADING ? 0 : 1,
@@ -74,6 +46,39 @@ class _TimetableTabState extends State<TimetableTab> {
             ),
           );
         },
+      ),
+    );
+  }
+
+  Material _appBar(BuildContext context, String formattedDate, String dayofWeek, String year) {
+    return Material(
+      elevation: 0.1,
+      child: Container(
+        color: Theme.of(context).colorScheme.surfaceVariant,
+        padding: EdgeInsets.symmetric(horizontal: 12.h),
+        child: Column(
+          children: [
+            SizedBox(height: 50.h),
+            Text(
+              'Расписание',
+              style: TextStyle(
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+            SizedBox(height: 4.h),
+            Text(
+              // '${context.localizations.today} -
+              '$formattedDate, $dayofWeek - $year',
+              style: TextStyle(
+                fontSize: 11.sp,
+                color: const Color(0XFF9DA4B2),
+              ),
+            ),
+            SizedBox(height: 16.h),
+            const CalendarDates(),
+          ],
+        ),
       ),
     );
   }

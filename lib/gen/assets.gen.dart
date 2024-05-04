@@ -32,10 +32,13 @@ class $AssetsImagesGen {
   AssetGenImage get logo4x =>
       const AssetGenImage('assets/images/Logo - 4x.png');
 
+  /// File path: assets/images/QR_code.svg
+  SvgGenImage get qRCode => const SvgGenImage('assets/images/QR_code.svg');
+
   $AssetsImagesStoresGen get stores => const $AssetsImagesStoresGen();
 
   /// List of all assets
-  List<AssetGenImage> get values => [frame1, logo4x];
+  List<dynamic> get values => [frame1, logo4x, qRCode];
 }
 
 class $AssetsIconsDownloaderGen {

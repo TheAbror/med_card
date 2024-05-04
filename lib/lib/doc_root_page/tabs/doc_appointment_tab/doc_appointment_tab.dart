@@ -19,9 +19,20 @@ class DoctorAppointmentTab extends StatelessWidget {
       'Nigora Saidova',
       'Mavluda Akhmedova',
       'Madina Ruzmetova',
+      'Abror Shamuradov1',
+      'Abbosjon Vositov2',
+      'Aziza Usmanova3',
+      'Bekzod Mamatov4',
+      'Dilnoza Rakhimova5',
+      'Gulnoza Nurmatova6',
+      'Feruza Tursunova7',
+      'Nigora Saidova8',
+      'Mavluda Akhmedova9',
+      'Madina Ruzmetova10',
     ];
     return ListView.builder(
       shrinkWrap: true,
+      physics: BouncingScrollPhysics(),
       itemCount: listOfPatients.length,
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       itemBuilder: (context, index) {
@@ -63,7 +74,7 @@ class DoctorAppointmentTab extends StatelessWidget {
                           Navigator.pushNamed(context, AppRoutes.patientdetailsPage);
                         },
                         child: Container(
-                          height: 35.h,
+                          height: 30.h,
                           width: 60.w,
                           decoration: BoxDecoration(
                               color: AppColors.float,
@@ -88,7 +99,7 @@ class DoctorAppointmentTab extends StatelessWidget {
                           Navigator.pushNamed(context, AppRoutes.acceptPatientPage);
                         },
                         child: Container(
-                          height: 35.h,
+                          height: 30.h,
                           margin: EdgeInsets.only(right: 12.w),
                           width: 60.w,
                           decoration: BoxDecoration(
