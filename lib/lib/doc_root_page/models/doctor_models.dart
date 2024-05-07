@@ -3,13 +3,31 @@ import 'package:json_annotation/json_annotation.dart';
 part 'doctor_models.g.dart';
 
 @JsonSerializable(includeIfNull: true)
+class Clinic {
+  final String clinic_name;
+  final String contacts;
+  final String address;
+  final List<DoctorsModel> doctors;
+
+  Clinic({
+    required this.clinic_name,
+    required this.contacts,
+    required this.address,
+    required this.doctors,
+  });
+
+  factory Clinic.fromJson(Map<String, dynamic> json) => _$ClinicFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ClinicToJson(this);
+}
+
+@JsonSerializable(includeIfNull: true)
 class DoctorsModel {
   final DoctorUsername doctor_username;
   final String doctor_fullname;
   final String doctor_birthdate;
   final String doctor_phone;
   final String doctor_license_no;
-  final Clinic clinic; //TODO fix model
   final SpecialityName speciality_name;
   final List<Review> reviews;
   final List<Experience> experiences;
@@ -22,7 +40,6 @@ class DoctorsModel {
     required this.doctor_birthdate,
     required this.doctor_phone,
     required this.doctor_license_no,
-    required this.clinic,
     required this.speciality_name,
     required this.reviews,
     required this.experiences,
@@ -45,23 +62,6 @@ class DoctorUsername {
   factory DoctorUsername.fromJson(Map<String, dynamic> json) => _$DoctorUsernameFromJson(json);
 
   Map<String, dynamic> toJson() => _$DoctorUsernameToJson(this);
-}
-
-@JsonSerializable(includeIfNull: true)
-class Clinic {
-  final String clinic_name;
-  final String contacts;
-  final String address;
-
-  Clinic({
-    required this.clinic_name,
-    required this.contacts,
-    required this.address,
-  });
-
-  factory Clinic.fromJson(Map<String, dynamic> json) => _$ClinicFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ClinicToJson(this);
 }
 
 @JsonSerializable(includeIfNull: true)

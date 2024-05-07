@@ -1,7 +1,7 @@
 part of 'doctor_bloc.dart';
 
 class DoctorState extends Equatable {
-  final List<DoctorsModel> data;
+  final List<Clinic> data;
   final BlocProgress blocProgress;
   final String failureMessage;
 
@@ -33,7 +33,7 @@ class DoctorState extends Equatable {
   }
 
   DoctorState copyWith({
-    List<DoctorsModel>? data,
+    List<Clinic>? data,
     bool? isPasswordHidden,
     BlocProgress? blocProgress,
     AccountType? accountType,

@@ -6,6 +6,22 @@ part of 'doctor_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+Clinic _$ClinicFromJson(Map<String, dynamic> json) => Clinic(
+      clinic_name: json['clinic_name'] as String,
+      contacts: json['contacts'] as String,
+      address: json['address'] as String,
+      doctors: (json['doctors'] as List<dynamic>)
+          .map((e) => DoctorsModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$ClinicToJson(Clinic instance) => <String, dynamic>{
+      'clinic_name': instance.clinic_name,
+      'contacts': instance.contacts,
+      'address': instance.address,
+      'doctors': instance.doctors,
+    };
+
 DoctorsModel _$DoctorsModelFromJson(Map<String, dynamic> json) => DoctorsModel(
       doctor_username: DoctorUsername.fromJson(
           json['doctor_username'] as Map<String, dynamic>),
@@ -13,7 +29,6 @@ DoctorsModel _$DoctorsModelFromJson(Map<String, dynamic> json) => DoctorsModel(
       doctor_birthdate: json['doctor_birthdate'] as String,
       doctor_phone: json['doctor_phone'] as String,
       doctor_license_no: json['doctor_license_no'] as String,
-      clinic: Clinic.fromJson(json['clinic'] as Map<String, dynamic>),
       speciality_name: SpecialityName.fromJson(
           json['speciality_name'] as Map<String, dynamic>),
       reviews: (json['reviews'] as List<dynamic>)
@@ -37,7 +52,6 @@ Map<String, dynamic> _$DoctorsModelToJson(DoctorsModel instance) =>
       'doctor_birthdate': instance.doctor_birthdate,
       'doctor_phone': instance.doctor_phone,
       'doctor_license_no': instance.doctor_license_no,
-      'clinic': instance.clinic,
       'speciality_name': instance.speciality_name,
       'reviews': instance.reviews,
       'experiences': instance.experiences,
@@ -55,18 +69,6 @@ Map<String, dynamic> _$DoctorUsernameToJson(DoctorUsername instance) =>
     <String, dynamic>{
       'username': instance.username,
       'email': instance.email,
-    };
-
-Clinic _$ClinicFromJson(Map<String, dynamic> json) => Clinic(
-      clinic_name: json['clinic_name'] as String,
-      contacts: json['contacts'] as String,
-      address: json['address'] as String,
-    );
-
-Map<String, dynamic> _$ClinicToJson(Clinic instance) => <String, dynamic>{
-      'clinic_name': instance.clinic_name,
-      'contacts': instance.contacts,
-      'address': instance.address,
     };
 
 SpecialityName _$SpecialityNameFromJson(Map<String, dynamic> json) =>

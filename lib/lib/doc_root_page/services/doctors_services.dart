@@ -10,5 +10,5 @@ abstract class DoctorsServices extends ChopperService {
       _$DoctorsServices(client ?? ChopperClient());
 
   @Get(path: AppStrings.clinics)
-  Future<Response<List<DoctorsModel>>> getClinicsInfo();
+  Future<Response<List<Clinic>>> getClinicsInfo();
 }
