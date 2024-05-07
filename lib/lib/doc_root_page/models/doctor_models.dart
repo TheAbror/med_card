@@ -9,7 +9,7 @@ class DoctorsModel {
   final String doctor_birthdate;
   final String doctor_phone;
   final String doctor_license_no;
-  final Clinic clinic;
+  final Clinic clinic; //TODO fix model
   final SpecialityName speciality_name;
   final List<Review> reviews;
   final List<Experience> experiences;

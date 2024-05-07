@@ -42,10 +42,11 @@ class ApiProvider {
 
     interceptors.add(notAuthorizedInterceptor);
 
-    interceptors.add(HeadersInterceptor({
+    interceptors.add(HeadersInterceptor(const {
       HttpHeaders.acceptHeader: 'application/json',
       HttpHeaders.contentTypeHeader: 'application/json',
-      HttpHeaders.authorizationHeader: token != null ? 'Token $token' : '',
+      // HttpHeaders.authorizationHeader: token != null ? 'Token $token' : '',
+      HttpHeaders.authorizationHeader: 'Token 75b0b2de0438f2c50f1a91bcb837ef5e6c6c4f15',
     }));
 
     return interceptors;

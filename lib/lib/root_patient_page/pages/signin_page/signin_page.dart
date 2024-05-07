@@ -132,10 +132,10 @@ class _SignInPageState extends State<SignInPage> {
   GestureDetector _ContinueButton(BuildContext context, AuthState state) {
     return GestureDetector(
       onTap: () {
-        final username = _usernameController.text.trim();
-        final password = _passwordController.text.trim();
+        // final username = _usernameController.text.trim();
+        // final password = _passwordController.text.trim();
         if (_formKey.currentState!.validate()) {
-          context.read<AuthBloc>().signIn(username, password);
+          // context.read<AuthBloc>().signIn(username, password);
           Navigator.pushNamed(context, AppRoutes.docRoot);
         }
       },

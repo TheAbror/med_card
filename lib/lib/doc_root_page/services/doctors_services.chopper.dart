@@ -18,13 +18,13 @@ final class _$DoctorsServices extends DoctorsServices {
   final Type definitionType = DoctorsServices;
 
   @override
-  Future<Response<DoctorsModel>> getClinicsInfo() {
+  Future<Response<List<DoctorsModel>>> getClinicsInfo() {
     final Uri $url = Uri.parse('https://wiut3.pythonanywhere.com/api/clinics/');
     final Request $request = Request(
       'GET',
       $url,
       client.baseUrl,
     );
-    return client.send<DoctorsModel, DoctorsModel>($request);
+    return client.send<List<DoctorsModel>, DoctorsModel>($request);
   }
 }

@@ -53,6 +53,24 @@ dynamic deserialize<SingleItemType>(Map<String, dynamic> json) {
     case DoctorsModel:
       return DoctorsModel.fromJson(json);
 
+    case DoctorUsername:
+      return DoctorUsername.fromJson(json);
+
+    case SpecialityName:
+      return SpecialityName.fromJson(json);
+
+    case Review:
+      return Review.fromJson(json);
+
+    case Experience:
+      return Experience.fromJson(json);
+
+    case Qualification:
+      return Qualification.fromJson(json);
+
+    case Availability:
+      return Availability.fromJson(json);
+
     default:
       return null;
   }
