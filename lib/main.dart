@@ -1,5 +1,6 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:med_card/core/router/main_route_generator.dart';
+import 'package:med_card/lib/doc_root_page/bloc/doctor_bloc.dart';
 
 import 'core/api/api_logging.dart';
 import 'core/api/api_provider.dart';
@@ -38,6 +39,7 @@ void main() async {
           providers: [
             BlocProvider(create: (context) => RootBloc()),
             BlocProvider(create: (context) => SplashBloc()),
+            BlocProvider(create: (context) => DoctorBloc()),
             BlocProvider(create: (_) => LocalizationBloc()..initLocalization()),
           ],
           child: const MyApp(),

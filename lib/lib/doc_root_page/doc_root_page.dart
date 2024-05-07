@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:med_card/core/colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:med_card/gen/assets.gen.dart';
+import 'package:med_card/lib/doc_root_page/bloc/doctor_bloc.dart';
 import '../../core/nav_bar/custom_water_drop_nav_bar.dart';
 import '../root_patient_page/bloc/root_bloc.dart';
 import 'charts/weekly_chart.dart';
@@ -25,6 +26,8 @@ class _DocRootPageState extends State<DocRootPage> {
   @override
   void initState() {
     super.initState();
+    context.read<DoctorBloc>().getClinicsInfo();
+
     pageController = PageController(initialPage: selectedIndex);
   }
 
