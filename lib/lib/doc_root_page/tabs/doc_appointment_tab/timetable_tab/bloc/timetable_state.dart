@@ -64,12 +64,82 @@ class TimetableState extends Equatable {
         [
           WeekDay(
             patientInfo: PatientInfo(
+              id: 10,
+              fullName: 'Bakhtiyor Nurmatov',
+              phone_number: '998911234567',
+              meeting_time: '16:00',
+              topic: 'Orthopedic consultation',
+              comments: 'Wear comfortable clothing',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 11,
+              fullName: 'Zarina Ismailova',
+              phone_number: '998913456789',
+              meeting_time: '12:30',
+              topic: 'Pregnancy check-up',
+              comments: 'Bring medical history',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 12,
+              fullName: 'Oybek Kadyrov',
+              phone_number: '998915678901',
+              meeting_time: '15:00',
+              topic: 'Skin consultation',
+              comments: 'Avoid using skin products before visit',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 13,
+              fullName: 'Mavjuda Rakhmonova',
+              phone_number: '998917890123',
+              meeting_time: '17:00',
+              topic: 'Cardiology appointment',
+              comments: 'Bring previous ECG results',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
               id: 1,
               fullName: 'Farruh Abdullaev',
               phone_number: '998112233445',
               meeting_time: '10:30',
               topic: 'Regular checkup',
               comments: '',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 5,
+              fullName: 'Gulnara Karimova',
+              phone_number: '998901234567',
+              meeting_time: '09:00',
+              topic: 'Dental check-up',
+              comments: 'Review dental history',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 6,
+              fullName: 'Rustam Tashkentov',
+              phone_number: '998903456789',
+              meeting_time: '11:00',
+              topic: 'Routine physical exam',
+              comments: 'Fast for 12 hours before',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 7,
+              fullName: 'Feruza Akhmedova',
+              phone_number: '998905678901',
+              meeting_time: '14:00',
+              topic: 'Eye examination',
+              comments: 'Bring previous eye exam reports',
             ),
           ),
         ],
@@ -84,6 +154,26 @@ class TimetableState extends Equatable {
               comments: 'Bring medical reports',
             ),
           ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 8,
+              fullName: 'Anvar Rashidov',
+              phone_number: '998907890123',
+              meeting_time: '10:30',
+              topic: 'Follow-up consultation',
+              comments: 'Discuss test results',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 9,
+              fullName: 'Dilnoza Turgunova',
+              phone_number: '998909876543',
+              meeting_time: '13:00',
+              topic: 'Nutrition counseling',
+              comments: 'Bring food diary',
+            ),
+          ),
         ],
         [
           WeekDay(
@@ -94,6 +184,66 @@ class TimetableState extends Equatable {
               meeting_time: '14:00',
               topic: 'New patient consultation',
               comments: '',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 11,
+              fullName: 'Zarina Ismailova',
+              phone_number: '998913456789',
+              meeting_time: '12:30',
+              topic: 'Pregnancy check-up',
+              comments: 'Bring medical history',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 12,
+              fullName: 'Oybek Kadyrov',
+              phone_number: '998915678901',
+              meeting_time: '15:00',
+              topic: 'Skin consultation',
+              comments: 'Avoid using skin products before visit',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 13,
+              fullName: 'Mavjuda Rakhmonova',
+              phone_number: '998917890123',
+              meeting_time: '17:00',
+              topic: 'Cardiology appointment',
+              comments: 'Bring previous ECG results',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 1,
+              fullName: 'Farruh Abdullaev',
+              phone_number: '998112233445',
+              meeting_time: '10:30',
+              topic: 'Regular checkup',
+              comments: '',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 5,
+              fullName: 'Gulnara Karimova',
+              phone_number: '998901234567',
+              meeting_time: '09:00',
+              topic: 'Dental check-up',
+              comments: 'Review dental history',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 6,
+              fullName: 'Rustam Tashkentov',
+              phone_number: '998903456789',
+              meeting_time: '11:00',
+              topic: 'Routine physical exam',
+              comments: 'Fast for 12 hours before',
             ),
           ),
         ],
@@ -108,8 +258,109 @@ class TimetableState extends Equatable {
               comments: 'Bring vaccination record',
             ),
           ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 10,
+              fullName: 'Bakhtiyor Nurmatov',
+              phone_number: '998911234567',
+              meeting_time: '16:00',
+              topic: 'Orthopedic consultation',
+              comments: 'Wear comfortable clothing',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 11,
+              fullName: 'Zarina Ismailova',
+              phone_number: '998913456789',
+              meeting_time: '12:30',
+              topic: 'Pregnancy check-up',
+              comments: 'Bring medical history',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 12,
+              fullName: 'Oybek Kadyrov',
+              phone_number: '998915678901',
+              meeting_time: '15:00',
+              topic: 'Skin consultation',
+              comments: 'Avoid using skin products before visit',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 13,
+              fullName: 'Mavjuda Rakhmonova',
+              phone_number: '998917890123',
+              meeting_time: '17:00',
+              topic: 'Cardiology appointment',
+              comments: 'Bring previous ECG results',
+            ),
+          ),
         ],
-        [],
+        [
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 11,
+              fullName: 'Zarina Ismailova',
+              phone_number: '998913456789',
+              meeting_time: '12:30',
+              topic: 'Pregnancy check-up',
+              comments: 'Bring medical history',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 12,
+              fullName: 'Oybek Kadyrov',
+              phone_number: '998915678901',
+              meeting_time: '15:00',
+              topic: 'Skin consultation',
+              comments: 'Avoid using skin products before visit',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 13,
+              fullName: 'Mavjuda Rakhmonova',
+              phone_number: '998917890123',
+              meeting_time: '17:00',
+              topic: 'Cardiology appointment',
+              comments: 'Bring previous ECG results',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 1,
+              fullName: 'Farruh Abdullaev',
+              phone_number: '998112233445',
+              meeting_time: '10:30',
+              topic: 'Regular checkup',
+              comments: '',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 5,
+              fullName: 'Gulnara Karimova',
+              phone_number: '998901234567',
+              meeting_time: '09:00',
+              topic: 'Dental check-up',
+              comments: 'Review dental history',
+            ),
+          ),
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 6,
+              fullName: 'Rustam Tashkentov',
+              phone_number: '998903456789',
+              meeting_time: '11:00',
+              topic: 'Routine physical exam',
+              comments: 'Fast for 12 hours before',
+            ),
+          ),
+        ],
         [],
       ),
       selectedTimetableSlots: [
@@ -151,6 +402,16 @@ class TimetableState extends Equatable {
             meeting_time: '15:30',
             topic: 'Consultation',
             comments: 'Bring vaccination record',
+          ),
+        ),
+        WeekDay(
+          patientInfo: PatientInfo(
+            id: 14,
+            fullName: 'Ulugbek Karimov',
+            phone_number: '998919876543',
+            meeting_time: '08:30',
+            topic: 'ENT consultation',
+            comments: 'List all symptoms',
           ),
         ),
       ],

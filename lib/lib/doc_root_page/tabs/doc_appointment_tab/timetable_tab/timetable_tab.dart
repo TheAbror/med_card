@@ -36,6 +36,15 @@ class _TimetableTabState extends State<TimetableTab> {
             children: [
               _appBar(context, formattedDate, dayofWeek, year),
               SizedBox(height: 14.h),
+              if (state.selectedTimetableSlots.isEmpty)
+                Center(
+                    child: Padding(
+                  padding: EdgeInsets.only(top: 250.h),
+                  child: Text(
+                    'No patients',
+                    style: TextStyle(fontSize: 20.sp),
+                  ),
+                )),
               Expanded(
                 flex: state.blocProgress == BlocProgress.IS_LOADING ? 0 : 1,
                 child: ListView.builder(
@@ -46,61 +55,6 @@ class _TimetableTabState extends State<TimetableTab> {
                   itemBuilder: (context, index) {
                     var result = state.selectedTimetableSlots[index];
 
-                    var row = Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, AppRoutes.patientdetailsPage);
-                          },
-                          child: Container(
-                            height: 30.h,
-                            width: 5.w,
-                            decoration: BoxDecoration(
-                                color: AppColors.float,
-                                borderRadius: BorderRadius.all(Radius.circular(8.r)),
-                                border: Border.all(color: AppColors.primary)),
-                            child: Center(
-                              child: Text(
-                                'Details',
-                                style: TextStyle(
-                                  letterSpacing: 0.5,
-                                  fontSize: 14.sp,
-                                  color: AppColors.primary,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 4.w),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, AppRoutes.acceptPatientPage);
-                          },
-                          child: Container(
-                            height: 30.h,
-                            margin: EdgeInsets.only(right: 12.w),
-                            width: 55.w,
-                            decoration: BoxDecoration(
-                              color: AppColors.primary,
-                              borderRadius: BorderRadius.all(Radius.circular(8.r)),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'Accept',
-                                style: TextStyle(
-                                  letterSpacing: 0.5,
-                                  fontSize: 14.sp,
-                                  color: AppColors.float,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    );
                     return Card(
                       elevation: 1,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
@@ -122,14 +76,70 @@ class _TimetableTabState extends State<TimetableTab> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('Time :' ' 12:00'),
-                                  Text('Phone Number: +998914309090'),
-                                  Text('Parcel number :' '#$index${1423}$index'),
-                                  Text('Problem topic: Lorem ipsum'),
-                                  Text('Comment: Lorem ipsum'),
+                                  Text('ID :${result.patientInfo!.id}'),
+                                  Text('Time :${result.patientInfo!.meeting_time}'),
+                                  Text('Number:${result.patientInfo!.phone_number}'),
+                                  Text('Problem topic: ${result.patientInfo!.topic}'),
+                                  Text('Comment: ${result.patientInfo!.comments}'),
+                                  SizedBox(height: 8.h),
                                 ],
                               ),
-                              row,
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pushNamed(context, AppRoutes.patientdetailsPage);
+                                },
+                                child: Container(
+                                  height: 30.h,
+                                  width: 55.w,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.float,
+                                    borderRadius: BorderRadius.all(Radius.circular(8.r)),
+                                    border: Border.all(color: AppColors.primary),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      'Details',
+                                      style: TextStyle(
+                                        letterSpacing: 0.5,
+                                        fontSize: 14.sp,
+                                        color: AppColors.primary,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 4.w),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pushNamed(context, AppRoutes.acceptPatientPage);
+                                },
+                                child: Container(
+                                  height: 30.h,
+                                  margin: EdgeInsets.only(right: 12.w),
+                                  width: 55.w,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.primary,
+                                    borderRadius: BorderRadius.all(Radius.circular(8.r)),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      'Accept',
+                                      style: TextStyle(
+                                        letterSpacing: 0.5,
+                                        fontSize: 14.sp,
+                                        color: AppColors.float,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
                         ],

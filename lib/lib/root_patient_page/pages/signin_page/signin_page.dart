@@ -22,7 +22,7 @@ class _SignInPageState extends State<SignInPage> {
   final _formKey = GlobalKey<FormState>();
 
 //todo3
-  final _usernameController = TextEditingController(text: '200000001');
+  final _usernameController = TextEditingController(text: '1');
   final _passwordController = TextEditingController(text: '123456');
 
   bool isPasscodeOnDefault = false;
@@ -132,11 +132,16 @@ class _SignInPageState extends State<SignInPage> {
   GestureDetector _ContinueButton(BuildContext context, AuthState state) {
     return GestureDetector(
       onTap: () {
-        // final username = _usernameController.text.trim();
+        final username = _usernameController.text.trim();
         // final password = _passwordController.text.trim();
+
         if (_formKey.currentState!.validate()) {
+          if (username.startsWith('1')) {
+            Navigator.pushNamed(context, AppRoutes.docRoot);
+          } else {
+            Navigator.pushNamed(context, AppRoutes.rootPatient);
+          }
           // context.read<AuthBloc>().signIn(username, password);
-          Navigator.pushNamed(context, AppRoutes.docRoot);
         }
       },
       child: Container(
