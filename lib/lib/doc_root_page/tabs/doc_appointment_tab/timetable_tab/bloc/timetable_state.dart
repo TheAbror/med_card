@@ -12,7 +12,7 @@ class TimetableState extends Equatable {
   final int selectedWeekDay;
   final int selectedLevel;
   final List<DateTime>? weekDays;
-  final TimetableResponse? timetable;
+  final TimeTableModel? timetable;
   final List<WeekDay> selectedTimetableSlots;
   final BlocProgress blocProgress;
   final String failureMessage;
@@ -60,7 +60,100 @@ class TimetableState extends Equatable {
       selectedLevel: 0,
       blocProgress: BlocProgress.IS_LOADING,
       failureMessage: '',
-      selectedTimetableSlots: const [],
+      timetable: TimeTableModel(
+        [
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 1,
+              fullName: 'Farruh Abdullaev',
+              phone_number: '998112233445',
+              meeting_time: '10:30',
+              topic: 'Regular checkup',
+              comments: '',
+            ),
+          ),
+        ],
+        [
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 2,
+              fullName: 'Dilfuza Rahimova',
+              phone_number: '998998887766',
+              meeting_time: '11:15',
+              topic: 'Follow-up appointment',
+              comments: 'Bring medical reports',
+            ),
+          ),
+        ],
+        [
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 3,
+              fullName: 'Nargiza Toshpulatova',
+              phone_number: '998998998997',
+              meeting_time: '14:00',
+              topic: 'New patient consultation',
+              comments: '',
+            ),
+          ),
+        ],
+        [
+          WeekDay(
+            patientInfo: PatientInfo(
+              id: 4,
+              fullName: 'Shohruh Umarov',
+              phone_number: '998997997996',
+              meeting_time: '15:30',
+              topic: 'Vaccination appointment',
+              comments: 'Bring vaccination record',
+            ),
+          ),
+        ],
+        [],
+        [],
+      ),
+      selectedTimetableSlots: [
+        WeekDay(
+          patientInfo: PatientInfo(
+            id: 2,
+            fullName: 'Dilfuza Rahimova',
+            phone_number: '998998887766',
+            meeting_time: '11:15',
+            topic: 'Follow-up appointment',
+            comments: 'Bring medical reports',
+          ),
+        ),
+        WeekDay(
+          patientInfo: PatientInfo(
+            id: 3,
+            fullName: 'Nargiza Toshpulatova',
+            phone_number: '998998998997',
+            meeting_time: '14:00',
+            topic: 'New patient consultation',
+            comments: '',
+          ),
+        ),
+        WeekDay(
+          patientInfo: PatientInfo(
+            id: 4,
+            fullName: 'Shohruh Umarov',
+            phone_number: '998997997996',
+            meeting_time: '15:30',
+            topic: 'Vaccination appointment',
+            comments: 'Bring vaccination record',
+          ),
+        ),
+        WeekDay(
+          patientInfo: PatientInfo(
+            id: 4,
+            fullName: 'Abbosjon Umarov',
+            phone_number: '998997997996',
+            meeting_time: '15:30',
+            topic: 'Consultation',
+            comments: 'Bring vaccination record',
+          ),
+        ),
+      ],
       // weekDays: (DateTime.now()).toList().sublist(0, 6),
     );
   }
@@ -79,7 +172,7 @@ class TimetableState extends Equatable {
     List<DateTime>? weekDays,
     BlocProgress? blocProgress,
     String? failureMessage,
-    TimetableResponse? timetable,
+    TimeTableModel? timetable,
     List<WeekDay>? selectedTimetableSlots,
   }) {
     return TimetableState(

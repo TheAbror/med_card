@@ -3,15 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:med_card/core/bloc_progress/bloc_progress.dart';
+import 'package:med_card/core/colors/app_colors.dart';
+import 'package:med_card/core/router/app_routes.dart';
 import 'package:med_card/lib/root_patient_page/pages/localization/bloc/localization_bloc.dart';
-import '../doc_appointment_tab.dart';
+
 import 'bloc/timetable_bloc.dart';
 import 'widgets/calendar_dates.dart';
 
 class TimetableTab extends StatefulWidget {
-  const TimetableTab({
-    super.key,
-  });
+  const TimetableTab({super.key});
 
   @override
   State<TimetableTab> createState() => _TimetableTabState();
@@ -38,7 +38,105 @@ class _TimetableTabState extends State<TimetableTab> {
               SizedBox(height: 14.h),
               Expanded(
                 flex: state.blocProgress == BlocProgress.IS_LOADING ? 0 : 1,
-                child: DoctorAppointmentTab(),
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: BouncingScrollPhysics(),
+                  itemCount: state.selectedTimetableSlots.length,
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  itemBuilder: (context, index) {
+                    var result = state.selectedTimetableSlots[index];
+
+                    var row = Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, AppRoutes.patientdetailsPage);
+                          },
+                          child: Container(
+                            height: 30.h,
+                            width: 5.w,
+                            decoration: BoxDecoration(
+                                color: AppColors.float,
+                                borderRadius: BorderRadius.all(Radius.circular(8.r)),
+                                border: Border.all(color: AppColors.primary)),
+                            child: Center(
+                              child: Text(
+                                'Details',
+                                style: TextStyle(
+                                  letterSpacing: 0.5,
+                                  fontSize: 14.sp,
+                                  color: AppColors.primary,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 4.w),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, AppRoutes.acceptPatientPage);
+                          },
+                          child: Container(
+                            height: 30.h,
+                            margin: EdgeInsets.only(right: 12.w),
+                            width: 55.w,
+                            decoration: BoxDecoration(
+                              color: AppColors.primary,
+                              borderRadius: BorderRadius.all(Radius.circular(8.r)),
+                            ),
+                            child: Center(
+                              child: Text(
+                                'Accept',
+                                style: TextStyle(
+                                  letterSpacing: 0.5,
+                                  fontSize: 14.sp,
+                                  color: AppColors.float,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                    return Card(
+                      elevation: 1,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
+                      child: ExpansionTile(
+                        shape: Border(),
+                        maintainState: true,
+                        expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                        expandedAlignment: Alignment.bottomLeft,
+                        childrenPadding: EdgeInsets.only(bottom: 10.h, left: 12.w),
+                        title: Text(
+                          result.patientInfo?.fullName ?? '',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text('Time :' ' 12:00'),
+                                  Text('Phone Number: +998914309090'),
+                                  Text('Parcel number :' '#$index${1423}$index'),
+                                  Text('Problem topic: Lorem ipsum'),
+                                  Text('Comment: Lorem ipsum'),
+                                ],
+                              ),
+                              row,
+                            ],
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
               ),
             ],
           );
@@ -80,24 +178,3 @@ class _TimetableTabState extends State<TimetableTab> {
     );
   }
 }
-    // if (state.blocProgress == BlocProgress.FAILED) {
-          //   return const SomethingWentWrong();
-          // }
-
-
-// if (state.selectedTimetableSlots.isEmpty && state.blocProgress == BlocProgress.LOADED)
-                //   Expanded(
-                //     flex: 10,
-                //     child: Center(
-                //       child: Text(
-                //         'context.localizations.noResultsText',
-                //         style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold),
-                //         textAlign: TextAlign.center,
-                //       ),
-                //     ),
-                //   ),
-                // if (state.blocProgress == BlocProgress.IS_LOADING)
-                //   Expanded(
-                //     flex: 10,
-                //     child: Center(child: AttendanceLoaderSmall()),
-                //   ),
