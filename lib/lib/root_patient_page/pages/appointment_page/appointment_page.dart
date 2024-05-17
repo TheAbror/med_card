@@ -264,7 +264,7 @@ InputDecoration ToFromDecoration(
     contentPadding: EdgeInsets.symmetric(vertical: 1.h, horizontal: 12.w),
     border: InputBorder.none,
     enabledBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: AppColors.stroke, width: 0.5.w),
+      borderSide: BorderSide(color: const Color.fromARGB(255, 206, 204, 204), width: 0.5.w),
       borderRadius: BorderRadius.circular(12),
     ),
     focusedBorder: OutlineInputBorder(

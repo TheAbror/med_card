@@ -3,6 +3,7 @@
 import 'package:chopper/chopper.dart';
 import 'package:med_card/lib/app_updates_page/models/app_version_response.dart';
 import 'package:med_card/lib/doc_root_page/models/doctor_models.dart';
+import 'package:med_card/lib/doc_root_page/tabs/doc_appointment_tab/accept_patient.dart';
 import 'package:med_card/lib/root_patient_page/model/patient_model.dart';
 
 class CustomDataConverter extends JsonConverter {

@@ -3,8 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:med_card/core/colors/app_colors.dart';
 import 'package:med_card/gen/assets.gen.dart';
 
+import 'accept_patient.dart';
+
 class PatientDetailsPage extends StatefulWidget {
-  const PatientDetailsPage({super.key});
+  final PatientInfoWhenAccept info;
+
+  const PatientDetailsPage({super.key, required this.info});
 
   @override
   State<PatientDetailsPage> createState() => _PatientDetailsPageState();
@@ -51,7 +55,7 @@ class _PatientDetailsPageState extends State<PatientDetailsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              _buildDetailContainer('Name', patientDetails['name']),
+              _buildDetailContainer('Name', widget.info.name),
               _buildDetailContainer('Age', patientDetails['age'].toString()),
               _buildDetailContainer('Blood Type', patientDetails['bloodType']),
               _buildDetailContainer('Gender', patientDetails['bloodType']),

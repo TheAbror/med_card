@@ -22,7 +22,7 @@ class MedCardTab extends StatelessWidget {
               width: 120.h,
               padding: EdgeInsets.all(2.h),
               decoration: BoxDecoration(
-                color: AppColors.iconSecondary,
+                color: AppColors.primary,
                 borderRadius: BorderRadius.circular(100.r),
                 border: Border.all(
                   color: Theme.of(context).colorScheme.background,
@@ -30,10 +30,10 @@ class MedCardTab extends StatelessWidget {
                 ),
               ),
               alignment: Alignment.center,
-              child: Text(
-                'adsfdss',
-                style: TextStyle(fontSize: 24.sp),
-                textAlign: TextAlign.center,
+              child: Icon(
+                Icons.person,
+                color: AppColors.float,
+                size: 54,
               ),
             ),
             Text('Name: Abror Shamuradov'),

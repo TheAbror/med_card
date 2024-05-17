@@ -59,11 +59,15 @@ class MainRouteGenerator {
         );
       case AppRoutes.patientdetailsPage:
         return CustomCupertinoStyleNavigationRoute(
-          builder: (_) => PatientDetailsPage(),
+          builder: (_) => PatientDetailsPage(
+            info: settings.arguments as PatientInfoWhenAccept,
+          ),
         );
       case AppRoutes.acceptPatientPage:
         return CustomCupertinoStyleNavigationRoute(
-          builder: (_) => AcceptPatientPage(),
+          builder: (_) => AcceptPatientPage(
+            info: settings.arguments as PatientInfoWhenAccept,
+          ),
         );
 
       default:

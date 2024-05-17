@@ -32,7 +32,7 @@ class WeeklyChartState extends State<WeeklyChart> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Text(
-                  'Patiens per day',
+                  'Пациентов в день',
                   style: TextStyle(
                     color: AppColors.textMain,
                     fontSize: 20.sp,
@@ -207,25 +207,25 @@ class WeeklyChartState extends State<WeeklyChart> {
     Widget text;
     switch (value.toInt()) {
       case 0:
-        text = const Text('M', style: style);
+        text = const Text('П', style: style);
         break;
       case 1:
-        text = const Text('T', style: style);
+        text = const Text('В', style: style);
         break;
       case 2:
-        text = const Text('W', style: style);
+        text = const Text('С', style: style);
         break;
       case 3:
-        text = const Text('T', style: style);
+        text = const Text('Ч', style: style);
         break;
       case 4:
-        text = const Text('F', style: style);
+        text = const Text('П', style: style);
         break;
       case 5:
-        text = const Text('S', style: style);
+        text = const Text('С', style: style);
         break;
       case 6:
-        text = const Text('S', style: style);
+        text = const Text('В', style: style);
         break;
       default:
         text = const Text('', style: style);

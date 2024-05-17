@@ -5,8 +5,8 @@ import 'package:intl/intl.dart';
 import 'package:med_card/core/bloc_progress/bloc_progress.dart';
 import 'package:med_card/core/colors/app_colors.dart';
 import 'package:med_card/core/router/app_routes.dart';
+import 'package:med_card/lib/doc_root_page/tabs/doc_appointment_tab/accept_patient.dart';
 import 'package:med_card/lib/root_patient_page/pages/localization/bloc/localization_bloc.dart';
-
 import 'bloc/timetable_bloc.dart';
 import 'widgets/calendar_dates.dart';
 
@@ -77,10 +77,10 @@ class _TimetableTabState extends State<TimetableTab> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text('ID :${result.patientInfo!.id}'),
-                                  Text('Time :${result.patientInfo!.meeting_time}'),
-                                  Text('Number:${result.patientInfo!.phone_number}'),
-                                  Text('Problem topic: ${result.patientInfo!.topic}'),
-                                  Text('Comment: ${result.patientInfo!.comments}'),
+                                  Text('Время :${result.patientInfo!.meeting_time}'),
+                                  Text('Номер:${result.patientInfo!.phone_number}'),
+                                  Text('Проблемная тема: ${result.patientInfo!.topic}'),
+                                  Text('Комментарий: ${result.patientInfo!.comments}'),
                                   SizedBox(height: 8.h),
                                 ],
                               ),
@@ -91,11 +91,21 @@ class _TimetableTabState extends State<TimetableTab> {
                             children: [
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.pushNamed(context, AppRoutes.patientdetailsPage);
+                                  Navigator.pushNamed(
+                                    context,
+                                    AppRoutes.patientdetailsPage,
+                                    arguments: PatientInfoWhenAccept(
+                                      id: result.patientInfo!.id.toString(),
+                                      name: result.patientInfo!.fullName,
+                                      topic: result.patientInfo!.topic,
+                                      comment: result.patientInfo!.comments,
+                                      time: result.patientInfo!.meeting_time,
+                                    ),
+                                  );
                                 },
                                 child: Container(
                                   height: 30.h,
-                                  width: 55.w,
+                                  width: 70.w,
                                   decoration: BoxDecoration(
                                     color: AppColors.float,
                                     borderRadius: BorderRadius.all(Radius.circular(8.r)),
@@ -103,7 +113,7 @@ class _TimetableTabState extends State<TimetableTab> {
                                   ),
                                   child: Center(
                                     child: Text(
-                                      'Details',
+                                      'Детали',
                                       style: TextStyle(
                                         letterSpacing: 0.5,
                                         fontSize: 14.sp,
@@ -117,19 +127,29 @@ class _TimetableTabState extends State<TimetableTab> {
                               SizedBox(width: 4.w),
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.pushNamed(context, AppRoutes.acceptPatientPage);
+                                  Navigator.pushNamed(
+                                    context,
+                                    AppRoutes.acceptPatientPage,
+                                    arguments: PatientInfoWhenAccept(
+                                      id: result.patientInfo!.id.toString(),
+                                      name: result.patientInfo!.fullName,
+                                      topic: result.patientInfo!.topic,
+                                      comment: result.patientInfo!.comments,
+                                      time: result.patientInfo!.meeting_time,
+                                    ),
+                                  );
                                 },
                                 child: Container(
                                   height: 30.h,
                                   margin: EdgeInsets.only(right: 12.w),
-                                  width: 55.w,
+                                  width: 70.w,
                                   decoration: BoxDecoration(
                                     color: AppColors.primary,
                                     borderRadius: BorderRadius.all(Radius.circular(8.r)),
                                   ),
                                   child: Center(
                                     child: Text(
-                                      'Accept',
+                                      'Принять',
                                       style: TextStyle(
                                         letterSpacing: 0.5,
                                         fontSize: 14.sp,

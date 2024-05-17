@@ -35,7 +35,7 @@ PreferredSize home_app_bar(BuildContext context, VoidCallback onTap) {
                 ),
                 SizedBox(height: 2.h),
                 Text(
-                  'fds',
+                  'Doctor',
                   style: TextStyle(
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w200,
