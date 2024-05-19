@@ -1,6 +1,7 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:med_card/core/router/main_route_generator.dart';
 import 'package:med_card/lib/doc_root_page/bloc/doctor_bloc.dart';
+import 'package:med_card/lib/dr_iq/bloc/dr_iq_bloc.dart';
 
 import 'core/api/api_logging.dart';
 import 'core/api/api_provider.dart';

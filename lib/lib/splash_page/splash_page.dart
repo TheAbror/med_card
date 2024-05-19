@@ -8,8 +8,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import '../app_updates_page/app_updates_view.dart';
 
-//TODO add dialog to qr and show it  as click or payme QR
-
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
 

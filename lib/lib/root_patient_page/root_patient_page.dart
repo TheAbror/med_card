@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:med_card/core/colors/app_colors.dart';
 import 'package:med_card/gen/assets.gen.dart';
+import 'package:med_card/lib/dr_iq/dr_iq_tab.dart';
 import 'bloc/root_bloc.dart';
 import 'tabs/home_tab/home_tab.dart';
 import 'package:flutter/material.dart';
@@ -29,14 +30,7 @@ class _RootPatientPageState extends State<RootPatientPage> {
   List<Widget> pages = [
     const HomeTab(),
     const MedCardTab(),
-    Container(
-      alignment: Alignment.center,
-      child: Icon(
-        Icons.chat,
-        size: 56,
-        color: Colors.blue[400],
-      ),
-    ),
+    DRIQTab(),
     MobileTab(),
   ];
 
