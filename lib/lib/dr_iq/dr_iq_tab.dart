@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:med_card/core/bloc_progress/bloc_progress.dart';
 import 'package:med_card/core/bottomsheet/primary_loader.dart';
 import 'package:med_card/core/colors/app_colors.dart';
+import 'package:med_card/core/router/app_routes.dart';
 import 'package:med_card/lib/dr_iq/bloc/dr_iq_bloc.dart';
 
 class DRIQTab extends StatefulWidget {
@@ -26,38 +27,53 @@ class _DRIQTabState extends State<DRIQTab> {
             if (state.blocProgress == BlocProgress.IS_LOADING) {
               return const PrimaryBottomSheetLoader();
             }
-            if (state.blocProgress == BlocProgress.LOADED) {
-              return Center(
-                child: Padding(
-                  padding: EdgeInsets.only(top: 150.h, left: 16.w, right: 16.w),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: state.drIQResponse.data.map((map) {
-                      final entry = map.entries.first;
-                      return Text(
-                        '${entry.key}: ${entry.value}',
-                        style: TextStyle(fontSize: 24),
-                        textAlign: TextAlign.start,
-                      );
-                    }).toList(),
-                  ),
-                ),
-              );
-            } else {
-              GestureDetector(
-                onTap: () {
-                  context.read<DrIQBloc>().getDRIQ('elevated body temperature, sweating, chills');
-                },
-                child: Container(
-                  alignment: Alignment.center,
-                  child: Icon(
-                    Icons.chat,
-                    size: 56,
-                    color: Colors.blue[400],
-                  ),
-                ),
+            if (state.blocProgress == BlocProgress.FAILED) {
+              return Column(
+                children: [
+                  Spacer(),
+                  Center(
+                      child: Text(
+                    'No results',
+                    style: TextStyle(fontSize: 20.sp),
+                  )),
+                  Spacer(),
+                  _myTextField(context),
+                ],
               );
             }
+            if (state.blocProgress == BlocProgress.LOADED) {
+              return Column(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        AppRoutes.allSpecialties,
+                      );
+                    },
+                    child: Center(
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 150.h, left: 16.w, right: 16.w),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: state.drIQResponse.data.map((map) {
+                            final entry = map.entries.first;
+                            return Text(
+                              '${entry.key}: ${entry.value}',
+                              style: TextStyle(fontSize: 24),
+                              textAlign: TextAlign.start,
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  _myTextField(context),
+                ],
+              );
+            }
+
             return _myTextField(context);
           },
         ),
@@ -69,9 +85,8 @@ class _DRIQTabState extends State<DRIQTab> {
     return Padding(
       padding: EdgeInsets.all(16.w),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          SizedBox(height: 200),
-          Spacer(),
           TextFormField(
             validator: (username) {
               if (username == null || username.isEmpty) {
@@ -83,8 +98,7 @@ class _DRIQTabState extends State<DRIQTab> {
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(
               filled: true,
-
-              border: InputBorder.none, // Remove border color
+              border: InputBorder.none,
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: AppColors.inputField, width: 1.w),
                 borderRadius: BorderRadius.circular(12),
@@ -105,10 +119,14 @@ class _DRIQTabState extends State<DRIQTab> {
               hintText: 'DR.IQ ',
               suffixIcon: GestureDetector(
                 onTap: () {
-                  context.read<DrIQBloc>().getDRIQ(_controller.text);
+                  context.read<DrIQBloc>().getDRIQ(_controller.text.trim());
                   // context.read<DrIQBloc>().getDRIQ('');
                 },
-                child: Icon(Icons.telegram, color: AppColors.primary),
+                child: Icon(
+                  Icons.telegram,
+                  color: AppColors.primary,
+                  size: 34,
+                ),
               ),
             ),
           )

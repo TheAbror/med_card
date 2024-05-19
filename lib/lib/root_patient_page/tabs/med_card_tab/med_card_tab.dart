@@ -170,6 +170,7 @@ class MedCardTab extends StatelessWidget {
                     children: [
                       Text('Дата : 23.01.2024'),
                       Text('Время : 10:00-10:30'),
+                      Text('Специализация : Лор'),
                       Text('Доктор : Abror Shamuradov'),
                     ],
                   ),

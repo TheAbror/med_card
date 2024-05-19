@@ -34,52 +34,86 @@ class AllSpecialties extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.all(16.w),
-        child: Column(
-          children: [
-            SpecialtiesItem(
-              text: 'earNoseAndThroat',
-              icon: route.earNoseAndThroat.path,
-            ),
-            SpecialtiesItem(
-              text: 'cardiology',
-              icon: route.cardiology.path,
-            ),
-            SpecialtiesItem(
-              text: 'dermatology',
-              icon: route.dermatology.path,
-            ),
-            SpecialtiesItem(
-              text: 'emergencyCare',
-              icon: route.emergencyCare.path,
-            ),
-            SpecialtiesItem(
-              text: 'familyMedicine',
-              icon: route.familyMedicine.path,
-            ),
-            SpecialtiesItem(
-              text: 'gastroenterology',
-              icon: route.gastroenterology.path,
-            ),
-            SpecialtiesItem(
-              text: 'geriatricMedicine',
-              icon: route.geriatricMedicine.path,
-            ),
-            SpecialtiesItem(
-              text: 'immunology',
-              icon: route.immunology.path,
-            ),
-            Spacer(),
-            ActionButton(
-              text: 'Записаться',
-              onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  AppRoutes.appointmentPage,
-                );
-              },
-            ),
-            SizedBox(height: 40.h),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SpecialtiesItem(
+                text: 'earNoseAndThroat',
+                icon: route.earNoseAndThroat.path,
+              ),
+              SpecialtiesItem(
+                text: 'cardiology',
+                icon: route.cardiology.path,
+              ),
+              SpecialtiesItem(
+                text: 'dermatology',
+                icon: route.dermatology.path,
+              ),
+              SpecialtiesItem(
+                text: 'emergencyCare',
+                icon: route.emergencyCare.path,
+              ),
+              SpecialtiesItem(
+                text: 'familyMedicine',
+                icon: route.familyMedicine.path,
+              ),
+              SpecialtiesItem(
+                text: 'gastroenterology',
+                icon: route.gastroenterology.path,
+              ),
+              SpecialtiesItem(
+                text: 'geriatricMedicine',
+                icon: route.geriatricMedicine.path,
+              ),
+              SpecialtiesItem(
+                text: 'immunology',
+                icon: route.immunology.path,
+              ),
+              SpecialtiesItem(
+                text: 'earNoseAndThroat',
+                icon: route.earNoseAndThroat.path,
+              ),
+              SpecialtiesItem(
+                text: 'cardiology',
+                icon: route.cardiology.path,
+              ),
+              SpecialtiesItem(
+                text: 'dermatology',
+                icon: route.dermatology.path,
+              ),
+              SpecialtiesItem(
+                text: 'emergencyCare',
+                icon: route.emergencyCare.path,
+              ),
+              SpecialtiesItem(
+                text: 'familyMedicine',
+                icon: route.familyMedicine.path,
+              ),
+              SpecialtiesItem(
+                text: 'gastroenterology',
+                icon: route.gastroenterology.path,
+              ),
+              SpecialtiesItem(
+                text: 'geriatricMedicine',
+                icon: route.geriatricMedicine.path,
+              ),
+              SpecialtiesItem(
+                text: 'immunology',
+                icon: route.immunology.path,
+              ),
+              // Spacer(),
+              ActionButton(
+                text: 'Записаться',
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    AppRoutes.appointmentPage,
+                  );
+                },
+              ),
+              SizedBox(height: 40.h),
+            ],
+          ),
         ),
       ),
     );

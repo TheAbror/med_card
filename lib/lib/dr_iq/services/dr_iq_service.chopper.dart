@@ -19,7 +19,7 @@ final class _$DrIQService extends DrIQService {
 
   @override
   Future<Response<DrIQResponse>> getDRIQ(DrIQRequest body) {
-    final Uri $url = Uri.parse('http://192.168.80.30:8000/api/recommend-doc');
+    final Uri $url = Uri.parse('http://192.168.147.30:8000/api/recommend-doc');
     final $body = body;
     final Request $request = Request(
       'POST',

@@ -1,7 +1,7 @@
 class AppStrings {
   //ismoil local
   static const baseLive = 'https://wiut3.pythonanywhere.com/api/';
-  static const drIQ = 'http://192.168.80.30:8000/api/recommend-doc';
+  static const drIQ = 'http://192.168.147.30:8000/api/recommend-doc';
   // static const baseLive = 'https://api.edulab.app/edulab_udea/api/v1/';
 
   static const projetName = 'EduLab';
