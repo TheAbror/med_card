@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:med_card/core/buttons/action_button.dart';
 import 'package:med_card/core/colors/app_colors.dart';
-import 'package:med_card/core/router/app_routes.dart';
 import 'package:med_card/core/utils/app_strings.dart';
+import 'package:med_card/lib/root_patient_page/pages/signin_page/widgets/dialog_success_failure.dart';
 import '../../../../core/bottomsheet/primary_bottom_sheet.dart';
 import 'bloc/appointment_bloc.dart';
 
@@ -196,10 +196,14 @@ class _AppointmentPageState extends State<AppointmentPage> {
                         ActionButton(
                           text: 'Записаться',
                           onPressed: () {
-                            Navigator.pushNamed(
-                              context,
-                              AppRoutes.doctorAppointmentPage,
-                            );
+                            Navigator.pop(context);
+                            Navigator.pop(context);
+                            showMessage('Success');
+
+                            // Navigator.pushNamed(
+                            //   context,
+                            //   AppRoutes.doctorAppointmentPage,
+                            // );
                           },
                         ),
                         SizedBox(height: 40.h),

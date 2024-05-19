@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogs/flutter_dialogs.dart';
 import 'package:med_card/core/colors/app_colors.dart';
+import 'package:med_card/core/router/app_routes.dart';
 
 Future<dynamic> signOutDialog(BuildContext context) {
   return showPlatformDialog(
@@ -14,7 +15,9 @@ Future<dynamic> signOutDialog(BuildContext context) {
             'Yes',
             style: TextStyle(color: AppColors.primary),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(mycontext).pushNamed(AppRoutes.splashPage);
+          },
         ),
         BasicDialogAction(
           title: Text(

@@ -98,48 +98,56 @@ class SpecialtiesItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(8.w),
-      margin: EdgeInsets.only(bottom: 8.h),
-      decoration: BoxDecoration(
-        color: AppColors.float,
-        borderRadius: BorderRadius.circular(12.r),
-      ),
-      child: Row(
-        children: [
-          SvgPicture.asset(
-            icon,
-            colorFilter: const ColorFilter.mode(
-              AppColors.primary,
-              BlendMode.srcIn,
-            ),
-          ),
-          SizedBox(width: 10.w),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                text,
-                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14.sp),
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          AppRoutes.appointmentPage,
+        );
+      },
+      child: Container(
+        padding: EdgeInsets.all(8.w),
+        margin: EdgeInsets.only(bottom: 8.h),
+        decoration: BoxDecoration(
+          color: AppColors.float,
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+        child: Row(
+          children: [
+            SvgPicture.asset(
+              icon,
+              colorFilter: const ColorFilter.mode(
+                AppColors.primary,
+                BlendMode.srcIn,
               ),
-              Text(
-                'Explanation of what this doctor does',
-                style: TextStyle(
-                  fontWeight: FontWeight.w300,
-                  fontSize: 12.sp,
-                  color: AppColors.iconSecondary,
+            ),
+            SizedBox(width: 10.w),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  text,
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14.sp),
                 ),
-              ),
-            ],
-          ),
-          Spacer(),
-          Assets.icons.figmaIcons.arrowRight.svg(
-            colorFilter: ColorFilter.mode(
-              AppColors.primary,
-              BlendMode.srcIn,
+                Text(
+                  'Explanation of what this doctor does',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 12.sp,
+                    color: AppColors.iconSecondary,
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
+            Spacer(),
+            Assets.icons.figmaIcons.arrowRight.svg(
+              colorFilter: ColorFilter.mode(
+                AppColors.primary,
+                BlendMode.srcIn,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
