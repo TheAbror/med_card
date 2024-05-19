@@ -169,6 +169,7 @@ class MedCardTab extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Дата : 23.01.2024'),
+                      Text('Время : 10:00-10:30'),
                       Text('Доктор : Abror Shamuradov'),
                     ],
                   ),
