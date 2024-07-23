@@ -5,6 +5,7 @@ abstract class AppRoutes {
   static const homeTab = 'home';
   static const signInPage = 'signInPage';
   static const appointmentPage = 'appointmentPage';
+  static const recordVoice = 'recordVoice';
   static const doctorAppointmentPage = 'doctorAppointmentPage';
   static const docRoot = 'docRoot';
   static const allSpecialties = 'allSpecialties';

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:med_card/core/bottomsheet/primary_bottom_sheet.dart';
 import 'package:med_card/core/colors/app_colors.dart';
+import 'package:med_card/core/router/app_routes.dart';
 import 'package:med_card/core/utils/app_strings.dart';
 import 'package:med_card/gen/assets.gen.dart';
 import 'package:med_card/lib/root_patient_page/pages/appointment_page/appointment_page.dart';
@@ -119,18 +120,26 @@ class _AcceptPatientPageState extends State<AcceptPatientPage> {
                     fit: BoxFit.fill,
                     height: 10),
                 SizedBox(width: 10.w),
-                Text('Нажмите, чтобы включить микрофон'),
+                Text('Нажмите, чтобы начать запись'),
                 Spacer(),
-                Container(
-                  height: 48.w,
-                  width: 48.w,
-                  decoration: BoxDecoration(
-                    color: AppColors.float,
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  child: Icon(
-                    Icons.mic,
-                    size: 24.sp,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      AppRoutes.recordVoice,
+                    );
+                  },
+                  child: Container(
+                    height: 48.w,
+                    width: 48.w,
+                    decoration: BoxDecoration(
+                      color: AppColors.float,
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    child: Icon(
+                      Icons.mic,
+                      size: 24.sp,
+                    ),
                   ),
                 ),
               ],
@@ -263,6 +272,48 @@ class _AcceptPatientPageState extends State<AcceptPatientPage> {
             Spacer(),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class VoiceRecordingPage extends StatelessWidget {
+  const VoiceRecordingPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(height: 50),
+          Image.asset('assets/icons/78_04_article.gif'),
+          SizedBox(height: 50),
+          Container(
+            height: 100.w,
+            width: 100.w,
+            decoration: BoxDecoration(
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(50.r),
+            ),
+            child: Center(
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  height: 40.w,
+                  width: 40.w,
+                  decoration: BoxDecoration(
+                    color: AppColors.background,
+                    borderRadius: BorderRadius.circular(5.r),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

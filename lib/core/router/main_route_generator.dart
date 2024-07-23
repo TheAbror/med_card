@@ -69,6 +69,10 @@ class MainRouteGenerator {
             info: settings.arguments as PatientInfoWhenAccept,
           ),
         );
+      case AppRoutes.recordVoice:
+        return CustomCupertinoStyleNavigationRoute(
+          builder: (_) => VoiceRecordingPage(),
+        );
 
       default:
         return CustomCupertinoStyleNavigationRoute(

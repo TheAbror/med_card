@@ -57,6 +57,7 @@ class _TimetableTabState extends State<TimetableTab> {
 
                     return Card(
                       elevation: 1,
+                      color: AppColors.float,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
                       child: ExpansionTile(
                         shape: Border(),
@@ -66,7 +67,7 @@ class _TimetableTabState extends State<TimetableTab> {
                         childrenPadding: EdgeInsets.only(bottom: 10.h, left: 12.w),
                         title: Text(
                           result.patientInfo?.fullName ?? '',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.primary),
                         ),
                         children: [
                           Row(
