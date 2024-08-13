@@ -5,6 +5,7 @@ import 'package:med_card/lib/doc_root_page/doc_root_page.dart';
 import 'package:med_card/lib/doc_root_page/tabs/doc_appointment_tab/accept_patient.dart';
 import 'package:med_card/lib/doc_root_page/tabs/doc_appointment_tab/doc_appointment_tab.dart';
 import 'package:med_card/lib/doc_root_page/tabs/doc_appointment_tab/patient_details_page.dart';
+import 'package:med_card/lib/doc_root_page/tabs/doc_appointment_tab/recording_page.dart';
 import 'package:med_card/lib/gov_auth_page/face_identification_page.dart';
 import 'package:med_card/lib/gov_auth_page/gov_auth_page.dart';
 import 'package:med_card/lib/root_patient_page/pages/appointment_page/appointment_page.dart';

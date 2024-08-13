@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:med_card/core/buttons/action_button.dart';
 import 'package:med_card/lib/doc_root_page/bloc/doctor_bloc.dart';
+import 'package:med_card/lib/root_patient_page/tabs/more_tab/sign_out_dialog.dart';
 import 'package:rive/rive.dart';
 
 class DoctorMoreTab extends StatelessWidget {
@@ -50,8 +52,12 @@ class DoctorMoreTab extends StatelessWidget {
                     );
                   }),
             ),
-            Container(
-                width: 300, height: 300, child: RiveAnimation.asset('assets/icons/voice.riv')),
+            ActionButton(
+              text: 'Sign out',
+              onPressed: () {
+                signOutDialog(context);
+              },
+            ),
           ],
         );
       },

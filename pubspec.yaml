@@ -35,7 +35,7 @@ dependencies:
 
   shimmer: ^3.0.0
 
-  better_player: ^0.0.83
+  # better_player: ^0.0.83
 
   # #downloader feature starts here
   # flutter_downloader: 1.11.4
@@ -69,11 +69,13 @@ dependencies:
 
   rive: ^0.13.9
 
+  audioplayers: ^6.0.0
 
+  record: ^5.1.2
 
+  flutter_sound: ^9.10.4
 
-
-
+  permission_handler: ^11.3.1
 
 
 
