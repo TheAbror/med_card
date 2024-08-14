@@ -26,7 +26,7 @@ class _DocRootPageState extends State<DocRootPage> {
   @override
   void initState() {
     super.initState();
-    context.read<DoctorBloc>().getClinicsInfo();
+    // context.read<DoctorBloc>().getClinicsInfo();
 
     pageController = PageController(initialPage: selectedIndex);
   }

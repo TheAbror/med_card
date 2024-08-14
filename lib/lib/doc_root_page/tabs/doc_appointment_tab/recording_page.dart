@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_sound/public/flutter_sound_recorder.dart';
@@ -13,12 +14,13 @@ class VoiceRecordingPage extends StatefulWidget {
 
 class _VoiceRecordingPageState extends State<VoiceRecordingPage> {
   final recorder = FlutterSoundRecorder();
+  bool isRecorderReady = false;
 
   @override
   void initState() {
     super.initState();
 
-    initRecorder();
+    // initRecorder();
   }
 
   @override
@@ -29,26 +31,61 @@ class _VoiceRecordingPageState extends State<VoiceRecordingPage> {
 
   Future initRecorder() async {
     final status = await Permission.microphone.request();
+
+    if (status != PermissionStatus.granted) {
+      throw 'Microphone access not granted';
+    }
+
+    await recorder.openRecorder();
+
+    isRecorderReady = true;
+
+    recorder.setSubscriptionDuration(Duration(milliseconds: 500));
   }
 
   Future record() async {
+    if (!isRecorderReady) return;
     await recorder.startRecorder(toFile: 'audio');
   }
 
   Future stop() async {
+    if (!isRecorderReady) return;
+
+    final path = await recorder.stopRecorder();
+    final audioFile = File(path!);
+    print('Recorded audio: $audioFile');
     await recorder.stopRecorder();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      appBar: AppBar(),
+      backgroundColor: Colors.blue.shade900,
       body: Center(
-        child: ElevatedButton(
-          child: Icon(recorder.isRecording ? Icons.stop : Icons.mic),
-          onPressed: () async {
-            //
-          },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            StreamBuilder<RecordingDisposition>(
+              stream: recorder.onProgress,
+              builder: (context, snapshot) {
+                final duration = snapshot.hasData ? snapshot.data!.duration : Duration.zero;
+
+                // String twoDigits(int n) => n.toString().padLeft(duration.inMinutes);
+
+                return Text(
+                  '${duration.inSeconds} s',
+                  style: TextStyle(fontSize: 24, color: Colors.white),
+                );
+              },
+            ),
+            ElevatedButton(
+              child: Icon(recorder.isRecording ? Icons.stop : Icons.mic),
+              onPressed: () async {
+                //
+              },
+            ),
+          ],
         ),
       ),
     );
