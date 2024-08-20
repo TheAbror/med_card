@@ -46,7 +46,7 @@ dependencies:
 
   # open_file: ^3.3.2
 
-  # path_provider: ^2.1.1
+  path_provider: ^2.1.1
   # #end here
 
   flutter_gen: ^5.3.2
@@ -69,13 +69,16 @@ dependencies:
 
   rive: ^0.13.9
 
-  audioplayers: ^6.0.0
+  # audioplayers: ^6.0.0
 
-  record: ^5.1.2
+  # record: ^5.1.2
 
-  flutter_sound: ^9.10.4
+  # flutter_sound: ^9.1.9
 
-  permission_handler: ^11.3.1
+  # permission_handler: ^11.3.1
+
+  flutter_sound: ^9.2.14
+  permission_handler: ^11.1.0
 
 
 

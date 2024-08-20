@@ -20,7 +20,7 @@ class _VoiceRecordingPageState extends State<VoiceRecordingPage> {
   void initState() {
     super.initState();
 
-    // initRecorder();
+    initRecorder();
   }
 
   @override
@@ -62,70 +62,70 @@ class _VoiceRecordingPageState extends State<VoiceRecordingPage> {
     return Scaffold(
       appBar: AppBar(),
       backgroundColor: Colors.blue.shade900,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            StreamBuilder<RecordingDisposition>(
-              stream: recorder.onProgress,
-              builder: (context, snapshot) {
-                final duration = snapshot.hasData ? snapshot.data!.duration : Duration.zero;
+      body: SizedBox(),
+      // Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       StreamBuilder<RecordingDisposition>(
+      //         stream: recorder.onProgress,
+      //         builder: (context, snapshot) {
+      //           final duration = snapshot.hasData ? snapshot.data!.duration : Duration.zero;
 
-                // String twoDigits(int n) => n.toString().padLeft(duration.inMinutes);
+      //           // String twoDigits(int n) => n.toString().padLeft(duration.inMinutes);
 
-                return Text(
-                  '${duration.inSeconds} s',
-                  style: TextStyle(fontSize: 24, color: Colors.white),
-                );
-              },
-            ),
-            ElevatedButton(
-              child: Icon(recorder.isRecording ? Icons.stop : Icons.mic),
-              onPressed: () async {
-                //
-              },
-            ),
-          ],
-        ),
-      ),
+      //           return Text(
+      //             '${duration.inSeconds} s',
+      //             style: TextStyle(fontSize: 24, color: Colors.white),
+      //           );
+      //         },
+      //       ),
+      //       ElevatedButton(
+      //         child: Icon(recorder.isRecording ? Icons.stop : Icons.mic),
+      //         onPressed: () async {
+      //           //
+      //         },
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
   }
 }
 
-
 ///
 ///
 //Column(
-      //   mainAxisAlignment: MainAxisAlignment.center,
-      //   children: [
-      //     SizedBox(height: 50),
-      //     Image.asset('assets/icons/78_04_article.gif'),
-      //     SizedBox(height: 50),
-      //     Container(
-      //       height: 100.w,
-      //       width: 100.w,
-      //       decoration: BoxDecoration(
-      //         color: Colors.red,
-      //         borderRadius: BorderRadius.circular(50.r),
-      //       ),
-      //       child: Center(
-      //         child: GestureDetector(
-      //           onTap: () {
-      //             Navigator.pop(context);
-      //           },
-      //           child: Container(
-      //             height: 40.w,
-      //             width: 40.w,
-      //             decoration: BoxDecoration(
-      //               color: AppColors.background,
-      //               borderRadius: BorderRadius.circular(5.r),
-      //             ),
-      //           ),
-      //         ),
-      //       ),
-      //     ),
-      //   ],
-      // ),
+//   mainAxisAlignment: MainAxisAlignment.center,
+//   children: [
+//     SizedBox(height: 50),
+//     Image.asset('assets/icons/78_04_article.gif'),
+//     SizedBox(height: 50),
+//     Container(
+//       height: 100.w,
+//       width: 100.w,
+//       decoration: BoxDecoration(
+//         color: Colors.red,
+//         borderRadius: BorderRadius.circular(50.r),
+//       ),
+//       child: Center(
+//         child: GestureDetector(
+//           onTap: () {
+//             Navigator.pop(context);
+//           },
+//           child: Container(
+//             height: 40.w,
+//             width: 40.w,
+//             decoration: BoxDecoration(
+//               color: AppColors.background,
+//               borderRadius: BorderRadius.circular(5.r),
+//             ),
+//           ),
+//         ),
+//       ),
+//     ),
+//   ],
+// ),
 
 // class RecordingScreen extends StatefulWidget {
 //   const RecordingScreen({super.key});
